@@ -63,6 +63,8 @@ And Firebase, because I saw that it completes well Angular. and also under the g
 - [désactiver un component si on est pas connecté  ](https://youtu.be/uYhAfgEwNWA?t=1362)
 - [désactiver  une div ](https://youtu.be/uYhAfgEwNWA?t=2351)
 - [dfaire une single page ](https://youtu.be/uYhAfgEwNWA?t=4572)
+- [il faut etre authentifié ](https://youtu.be/uYhAfgEwNWA?t=6471)
+- [formulaire](https://youtu.be/uYhAfgEwNWA?t=7903)
 
 
 
