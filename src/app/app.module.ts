@@ -1,63 +1,69 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './verify-email/verify-email.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HomeComponent } from "./home/home.component";
+import { SignupComponent } from "./signup/signup.component";
+import { LoginComponent } from "./login/login.component";
 
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatButtonModule } from '@angular/material/button';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatCardModule } from '@angular/material/card';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatListModule } from '@angular/material/list';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatRippleModule } from '@angular/material/core';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatSortModule } from '@angular/material/sort';
-import { MatStepperModule } from '@angular/material/stepper';
-import { MatTableModule } from '@angular/material/table';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatTreeModule } from '@angular/material/tree';
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatBadgeModule } from "@angular/material/badge";
+import { MatButtonModule } from "@angular/material/button";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { MatCardModule } from "@angular/material/card";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatChipsModule } from "@angular/material/chips";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatIconModule } from "@angular/material/icon";
+import { MatInputModule } from "@angular/material/input";
+import { MatListModule } from "@angular/material/list";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatNativeDateModule } from "@angular/material/core";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatRippleModule } from "@angular/material/core";
+import { MatSelectModule } from "@angular/material/select";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatSliderModule } from "@angular/material/slider";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatSortModule } from "@angular/material/sort";
+import { MatStepperModule } from "@angular/material/stepper";
+import { MatTableModule } from "@angular/material/table";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatTreeModule } from "@angular/material/tree";
 
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { environment } from '../environments/environment';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HttpClientModule } from "@angular/common/http";
+
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFireStorageModule } from "@angular/fire/compat/storage";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { AngularFireDatabaseModule } from "@angular/fire/compat/database";
+import { environment } from "../environments/environment";
+import { HomepageComponent } from "./homepage/homepage.component";
+import { NavbarComponent } from "./navbar/navbar.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { DayComponent } from "./day/day.component";
+import { InformationComponent } from "./information/information.component";
+import { HonnorComponent } from "./honnor/honnor.component";
+import { PartyComponent } from "./party/party.component";
+import { PicturesComponent } from "./pictures/pictures.component";
 
 @NgModule({
   declarations: [
@@ -65,11 +71,16 @@ import { HomepageComponent } from './homepage/homepage.component';
     HomeComponent,
     SignupComponent,
     LoginComponent,
-    ForgotPasswordComponent,
-    VerifyEmailComponent,
+
     DashboardComponent,
     AdminDashboardComponent,
     HomepageComponent,
+    NavbarComponent,
+    DayComponent,
+    InformationComponent,
+    HonnorComponent,
+    PartyComponent,
+    PicturesComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,8 +131,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
+    NgbModule,
   ],
-  exports: [SignupComponent],
+  exports: [SignupComponent, HomeComponent, NavbarComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

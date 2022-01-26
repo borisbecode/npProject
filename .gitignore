@@ -12,6 +12,7 @@
 ./node_modules
 /node_modules
 
+.pack
 # profiling files
 chrome-profiler-events*.json
 

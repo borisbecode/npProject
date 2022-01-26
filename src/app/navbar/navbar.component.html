@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbarboris">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon">Menu</span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+    <ul class="navbar-nav justify-content-around">
+      <li class="nav-item active">
+        <a class="nav-link mr-5" routerLink="/home"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link mr-5" routerLink="/information">Information</a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link mr-5"
+          *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 3"
+          routerLink="/day"
+          >Journée</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link mr-5"
+          *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 4"
+          routerLink="/honnor"
+          >Vin d'honneur</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link mr-5"
+          *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 5"
+          routerLink="/party"
+          >Soirée</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link mr-5"
+          *ngIf="afAuth.user | async"
+          routerLink="/pictures"
+          >Photos</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link mr-5"
+          *ngIf="!(afAuth.user | async)"
+          routerLink="/login"
+          >login</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link mr-5"
+          href="#"
+          *ngIf="afAuth.user | async"
+          (click)="logout()"
+          >Logout</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link mr-5"
+          *ngIf="(user | async)?.accountType == '1'"
+          routerLink="/admin"
+          >Admin</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<h2>Almost before we knew it, we had left the ground.</h2>
+
+<!-- <mat-card *ngIf="afAuth.user | async">
+  <mat-icon>check_circle</mat-icon>
+  <span>User is logged in</span>
+</mat-card>
+<mat-card *ngIf="!(afAuth.user | async)">
+  <mat-icon>do_not_disturb</mat-icon>
+  <span>User is not logged in</span>
+</mat-card> -->

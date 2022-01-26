@@ -11,7 +11,7 @@ import { SignupComponent } from '../signup/signup.component';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css'],
+  styleUrls: ['./admin-dashboard.component.scss'],
 })
 export class AdminDashboardComponent implements OnInit {
   user: Observable<any>; // Example: store the user's info here (Cloud Firestore: collection is 'users', docId is the user's email, lower case)

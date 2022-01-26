@@ -1,0 +1,32 @@
+.navbarboris {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+a {
+  color: #f2e2ce;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navbar-nav > li {
+}
+
+.nav-link {
+}
+
+.box {
+  padding: 60px;
+  max-width: 650px;
+  background: #80d5a6;
+  border: 5px dashed mediumseagreen;
+  box-shadow: 0 0 0 2.5px #226741, 0 0 0 12.5px #fff, inset 0 0 0 2.5px #226741,
+    0 5px 10px 15px rgba(0, 0, 0, 0.5), inset 0 0 0 6px #fff,
+    inset 0 0 100vw 100vw beige;
+  color: mediumseagreen;
+  font-family: Marcellus, serif;
+  font-size: 3em;
+  text-shadow: 0 2px #fff;
+  text-align: center;
+}
