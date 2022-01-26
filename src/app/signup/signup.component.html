@@ -1,0 +1,70 @@
+<mat-card class="form-card">
+  <form [formGroup]="signupForm" (ngSubmit)="signup()">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input
+          autocomplete="off"
+          formControlName="nom"
+          type="text"
+          matInput
+          placeholder="Nom de famille"
+        />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Prenom</mat-label>
+        <input
+          autocomplete="off"
+          formControlName="prenom"
+          type="text"
+          matInput
+          placeholder="Prenom "
+        />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          formControlName="email"
+          type="email"
+          matInput
+          placeholder="Email"
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-select required formControlName="niveau">
+          <mat-option value="1">admin</mat-option>
+          <mat-option value="2">temoin</mat-option>
+          <mat-option value="3">invité pour la journée</mat-option>
+          <mat-option value="4">invité pour le vin d'honneur</mat-option>
+          <mat-option value="5">invité pour la soirée</mat-option>
+        </mat-select>
+        <mat-label
+          ><mat-icon>favorite</mat-icon> Niveau d'invitation
+        </mat-label>
+      </mat-form-field>
+    </p>
+    <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+      <span>{{ firebaseErrorMessage }}</span>
+    </div>
+
+    <button mat-raised-button color="primary">Enregistrer l'invité</button>
+  </form>
+</mat-card>
+
+<div
+  class="progressIndicator"
+  [style.display]="isProgressVisible ? 'inline' : 'none'"
+>
+  <mat-progress-spinner
+    class="example-margin"
+    color="primary"
+    mode="indeterminate"
+  ></mat-progress-spinner>
+</div>

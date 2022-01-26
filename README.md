@@ -1,62 +1,33 @@
-
-# Near Perf Project
-For this challenge of consolidation, I decided to make a wedding website. 
-Simply because my two best friends are going to get married, join the useful to the pleasure.
-
-## Environment : 
-I decided to realize this project in Angular for the frontend and Firebase for the backend . 
-Angular because it's a framework that I would like to try and manipulate to make my opinion.
-And Firebase, because I saw that it completes well Angular. and also under the good advice of the coaches. 
-
-## Usefull link and tools for this project : 
- - [Angular and firebase website ](https://www.youtube.com/watch?v=uYhAfgEwNWA)
- - [Angular and firebase application , Udemy cursus 2021 french](www.google.com)
- - [How to write a Good readme](https://readme.so/)
+# npproject
 
 
-## Model Project on Framer : 
- - [Mobile Model ](https://framer.com/share/Scroll--1TtoWqKJQlpmqjGX28fy/SHcmEuZFa)
- - *Mobile information :* the swipe should be a top/down. working on the style.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
-- [Computers Model ](https://framer.com/share/Scroll--1TtoWqKJQlpmqjGX28fy/K9SNwQK69)
- - *Computers information :* Should be really nice ! 
+## Development server
 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Code scaffolding
 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Features && Difficulty : 
+## Build
 
-- Make a pictures games
-- Send pictures and see pictures of others
-- Rate pictures
-- Different page visible according to the authorizations
-- Send a form for question
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Screenshots
+## Running unit tests
 
-![Mobile](https://zupimages.net/up/22/03/ixmz.png)
-![Mobile](https://zupimages.net/up/22/03/b0b9.png)
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Color Reference
-[Color Choice ](https://coolors.co/f4f1de-f2e2ce-efd3be-eab69f-e5987f-e07a5f-bf6e5e-7e575d-5e4c5c-3d405b)
+## Running end-to-end tests
 
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Eggshell| ![#F4F1DE](https://via.placeholder.com/10/#f4f1de?text=+) #F4F1DE |
-| Antique White | ![#f8f8f8](https://via.placeholder.com/10/f2e2c2?text=+) F2E2CE |
-| Desert sand| ![#00b48a](https://via.placeholder.com/10/efd3be?text=+) EFD3BE |
-| Tumbleweed| ![#00d1a0](https://via.placeholder.com/10/eab69f?text=+) EAB69F |
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
+## Further help
 
-## Authors
-
-- [BorisTheRacoon](https://github.com/borisbecode)
-
-
-
-![Logo](https://i.imgur.com/78YSC8u.jpg)
-
-
+<<<<<<< HEAD
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
 
 ## Lessons Time zone : 
 
@@ -69,3 +40,4 @@ And Firebase, because I saw that it completes well Angular. and also under the g
 
 
 
+>>>>>>> d204d70bc7fb7ece8ad462f3b04fdb2e688940a8

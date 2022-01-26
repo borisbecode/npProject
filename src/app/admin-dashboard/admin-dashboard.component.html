@@ -1,0 +1,22 @@
+Admin Dashboard
+
+<br />
+<br />
+<button mat-raised-button color="primary" routerLink="/home">
+  <mat-icon>home</mat-icon>
+  <span>Home</span>
+</button>
+
+<br />
+<br />
+
+<div *ngIf="(user | async)?.accountType == '1'; else notAdmin">
+  hello admin!
+  <br />
+  this is a simple test for admin status. a more rigorous test is to edit the
+  auth.guard.ts file :)
+  <br />
+  <app-signup></app-signup>
+</div>
+
+<ng-template #notAdmin> Not admin </ng-template>
