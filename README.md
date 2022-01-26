@@ -60,8 +60,8 @@ And Firebase, because I saw that it completes well Angular. and also under the g
 ## Lessons Time zone : 
 
 - [désactiver un component si on est pas connecté  ](https://youtu.be/uYhAfgEwNWA?t=1362)
--- [désactiver  une div ](https://youtu.be/uYhAfgEwNWA?t=2351)
-
+- [désactiver  une div ](https://youtu.be/uYhAfgEwNWA?t=2351)
+- [best video ever ] (https://www.youtube.com/watch?v=HRaINOrhXbw&t=1s)
 
 
 
