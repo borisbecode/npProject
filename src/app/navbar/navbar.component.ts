@@ -35,4 +35,22 @@ export class NavbarComponent implements OnInit {
   logout(): void {
     this.afAuth.signOut();
   }
+  tohome(): void {
+    document.getElementById("Hbackground").scrollIntoView();
+  }
+  toinformation(): void {
+    document.getElementById("information").scrollIntoView();
+  }
+  toparty(): void {
+    document.getElementById("party").scrollIntoView();
+  }
+  today(): void {
+    document.getElementById("day").scrollIntoView();
+  }
+  tohonnor(): void {
+    document.getElementById("honnor").scrollIntoView();
+  }
+  topictures(): void {
+    document.getElementById("pictures").scrollIntoView();
+  }
 }

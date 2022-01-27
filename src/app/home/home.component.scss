@@ -6,135 +6,17 @@ font-family: 'Great Vibes', cursive;
 font-family: 'Major Mono Display', monospace;
 font-family: 'Pacifico', cursive;
 */
-.FullScreen {
-  width: 100vw;
-  height: 100vh;
-}
-
-#Hbackground {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-#Obackground {
-  position: absolute;
-  top: 0;
-  background-color: antiquewhite;
-  opacity: 5%;
-}
-
-.SetText {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  font-family: "Major Mono Display", monospace;
-  background-color: antiquewhite;
-  color: darkslategray;
-  opacity: 95%;
-}
-
-#Who:hover {
-  opacity: 100%;
-}
 
 /*Desktop*/
-@media (min-aspect-ratio: 18/9) and (min-width: 700px) {
-  #Hbackground {
-    background-image: url("../../app/images/Nous1.jpg");
-  }
 
-  #Save {
-    bottom: 5vh;
-    left: 5vw;
-    width: 35vw;
-    font-size: 2.5vw;
-    padding: 2vh;
-    border-radius: 2vh;
-  }
-
-  #What {
-    top: 5vh;
-    left: 5vw;
-    width: 35vw;
-    font-size: 1.5vw;
-    padding: 2vh;
-    border-radius: 2vh;
-  }
-
-  #Who {
-    bottom: 5vh;
-    right: 5vw;
-    width: 35vw;
-    font-size: 1.5vw;
-    padding: 2vh;
-    border-radius: 2vh;
-  }
-}
 @media (max-aspect-ratio: 18/9) and (min-width: 700px) {
   #Hbackground {
     background-image: url("../../app/images/Nous1.jpg");
-  }
-
-  #Save {
-    top: 60vh;
-    left: 25vw;
-    width: 50vw;
-    font-size: 3.5vw;
-    padding: 2vh;
-    border-radius: 2vh;
-  }
-
-  #What {
-    top: 5vh;
-    left: 5vw;
-    width: 35vw;
-    font-size: 1.5vw;
-    padding: 2vh;
-    border-radius: 2vh;
-  }
-
-  #Who {
-    bottom: 5vh;
-    right: 5vw;
-    width: 35vw;
-    font-size: 1.5vw;
-    padding: 2vh;
-    border-radius: 2vh;
   }
 }
 /*Mobile*/
 @media (max-width: 800px) {
   #Hbackground {
     background-image: url("../../app/images/NousV1.jpg");
-  }
-
-  #Save {
-    top: 60vh;
-    left: 5vw;
-    width: 90vw;
-    font-size: 7vw;
-    padding: 2vw;
-    border-radius: 2vw;
-  }
-
-  #What {
-    top: 5vh;
-    left: 5vw;
-    width: 90vw;
-    font-size: 4vw;
-    padding: 2vw;
-    border-radius: 2vw;
-  }
-
-  #Who {
-    bottom: 5vh;
-    left: 5vw;
-    width: 90vw;
-    font-size: 4vw;
-    padding: 2vw;
-    border-radius: 2vw;
   }
 }

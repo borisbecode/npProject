@@ -64,6 +64,8 @@ import { InformationComponent } from "./information/information.component";
 import { HonnorComponent } from "./honnor/honnor.component";
 import { PartyComponent } from "./party/party.component";
 import { PicturesComponent } from "./pictures/pictures.component";
+import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
+import { ModalLoginComponent } from "./modal-login/modal-login.component";
 
 @NgModule({
   declarations: [
@@ -81,8 +83,12 @@ import { PicturesComponent } from "./pictures/pictures.component";
     HonnorComponent,
     PartyComponent,
     PicturesComponent,
+    ModalLoginComponent,
   ],
   imports: [
+    NgxPageScrollCoreModule.forRoot({
+      duration: 1500,
+    }),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -133,7 +139,13 @@ import { PicturesComponent } from "./pictures/pictures.component";
     AngularFireModule.initializeApp(environment.firebase),
     NgbModule,
   ],
-  exports: [SignupComponent, HomeComponent, NavbarComponent],
+  exports: [
+    SignupComponent,
+    HomeComponent,
+    NavbarComponent,
+    ModalLoginComponent,
+    LoginComponent,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

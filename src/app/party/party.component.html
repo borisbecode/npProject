@@ -1,1 +1,19 @@
-<p>party works!</p>
+<!-- <div
+  id="party"
+  class="bg-danger"
+  *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 5"
+>
+  <div class="FullScreen">
+    <div class="row">
+      <div class="col-sm">One of three columns</div>
+      <div class="col-sm">One of three columns</div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid" id="party">
+  <div class="row">
+    <div class="col-sm-6 order-sm-1 bg-danger FullScreenright">IM PARTY</div>
+    <div class="col-sm-6 order-sm-1 FullScreenleft">IM PARTY</div>
+  </div>
+</div>

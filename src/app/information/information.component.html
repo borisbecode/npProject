@@ -1,1 +1,42 @@
-<p>information works!</p>
+<div id="information" class="FullScreen">
+  <div class="row">
+    <div
+      class="col-sm-8 order-sm-1 FullScreenright text-center justify-content-center"
+    >
+      <h1>information</h1>
+      <!-- coupe le coté gauche en deux -->
+      <div class="row text-center justify-content-center">
+        <div
+          class="leftdate col-sm-5 order-sm-1 text-center justify-content-center"
+        >
+          <h2 mb-5>date :</h2>
+          <p id="date">13. 08. 2022</p>
+          <div class="mt-5" id="timer">
+            <h2>time left :</h2>
+            <span id="days"></span>days <span id="hours"></span>hours
+            <span id="minutes"></span>minutes <span id="seconds"></span>seconds
+          </div>
+        </div>
+        <div
+          class="rightposition col-sm-5 order-sm-1 text-center justify-content-center"
+        >
+          <h2 class="my-auto">lieu :</h2>
+          <p class="mb-3">Rue de walibi n°35 ,1050 ixelles .</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5053.655420408953!2d4.589849179427408!3d50.70458166804516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c17d8aec109b59%3A0xec0b5286181703eb!2sWalibi%20Belgium!5e0!3m2!1sfr!2sbe!4v1643298250302!5m2!1sfr!2sbe"
+            width="90%"
+            height="90%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+      <div class="col-12 order-sm-3">
+        <h1>Connectez vous</h1>
+        <app-modal-login></app-modal-login>
+      </div>
+    </div>
+    <div class="col-sm-4 order-sm-2 FullScreenleft"></div>
+  </div>
+</div>

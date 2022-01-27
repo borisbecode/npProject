@@ -1,21 +1,31 @@
 .navbarboris {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.63);
+  color: #f2e2ce;
+  box-shadow: 0 1px 0 0 rgba(240, 240, 240, 0.52);
+  padding-bottom: 2vh;
+  width: auto;
+}
+.navbarboris > button {
+  background-color: #f2e2ce;
 }
 
 a {
-  color: #f2e2ce;
-  padding: 1em 1.5em;
+  padding-left: 2vw;
+  padding-right: 2vw;
+
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.navbar-nav > li {
+a:hover {
+  border: solid #f2e2ce 1px;
+  cursor: pointer;
 }
 
 .nav-link {
+  color: #f2e2ce;
 }
-
+/* 
 .box {
   padding: 60px;
   max-width: 650px;
@@ -29,4 +39,4 @@ a {
   font-size: 3em;
   text-shadow: 0 2px #fff;
   text-align: center;
-}
+} */

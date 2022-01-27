@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Major Mono Display", monospace;
+}
+h1 {
+  font-family: "Major Mono Display", monospace;
+}
+h2 {
+  font-family: "Major Mono Display", monospace;
+}
+
+.leftdate {
+  display: grid;
+  place-items: center;
+
+  border: 2px solid;
+
+  border-image: linear-gradient(to bottom, #f4f1de, #efd3be, #f4f1de) 0 1;
+  margin: 2%;
+  height: 40vh;
+}
+.rightposition {
+  margin: 2%;
+  height: 40vh;
+
+  display: grid;
+  place-items: center;
+
+  border: 2px solid;
+
+  border-image: linear-gradient(to bottom, #efd3be, #f4f1de, #efd3be) 0 1;
+}
+
+#date {
+  font-size: 5vh;
+}
+
+.FullScreenright {
+  height: 100vh;
+  padding-top: 8vh;
+  background-color: #eab69f;
+  padding-bottom: 1vh;
+}
+.FullScreenleft {
+  border-left: solid 1px white;
+  height: 100vh;
+  padding-top: 8vh;
+  background-image: url("../../app/images/flower.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 1vh;
+}
+
+@media (max-width: 800px) {
+  .FullScreenright {
+    height: auto;
+    padding-top: 8vh;
+    background-color: #eab69f;
+    padding-bottom: 1vh;
+  }
+  .leftdate {
+    display: grid;
+    place-items: center;
+
+    border: 2px solid;
+
+    border-image: linear-gradient(to left, turquoise, greenyellow) 1 0;
+    margin: 2%;
+    height: 40vh;
+  }
+  .rightposition {
+    margin: 2%;
+    height: 40vh;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid;
+
+    border-image: linear-gradient(to left, turquoise, greenyellow) 1 0;
+  }
+
+  .FullScreenleft {
+    border-left: solid 1px white;
+    height: 20vh;
+    padding-top: 8vh;
+    background-image: url("../../app/images/flower.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-bottom: 1vh;
+  }
+}
