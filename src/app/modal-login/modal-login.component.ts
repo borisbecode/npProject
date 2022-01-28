@@ -1,15 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Router } from "@angular/router";
 import { AuthService } from "../services/auth.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { Xliff } from "@angular/compiler";
 
 @Component({
   selector: "app-modal-login",
   templateUrl: "./modal-login.component.html",
   styleUrls: ["./modal-login.component.scss"],
 
+  encapsulation: ViewEncapsulation.None,
   styles: [
     `
       .dark-modal .modal-content {
@@ -20,7 +23,11 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
         color: white;
       }
       .light-blue-backdrop {
-        background-color: #5cb3fd;
+        /*      background-image: url(../../app/images/pap.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30%; */
+        background-color: black;
       }
     `,
   ],
@@ -39,6 +46,7 @@ export class ModalLoginComponent implements OnInit {
   closeResult: string;
 
   constructor(
+    private _snackBar: MatSnackBar,
     private modalService: NgbModal,
     private authService: AuthService,
     private router: Router,
@@ -54,13 +62,19 @@ export class ModalLoginComponent implements OnInit {
     this.firebaseErrorMessage = "";
   }
 
-  openBackDropCustomClass(content) {
-    this.modalService.open(content, { backdropClass: "light-blue-backdrop" });
+  panelOpenState = false;
+
+  openSnackBar(message: "vous etes connectés", action: "close") {
+    this._snackBar.open(message, action, { duration: 3500 });
   }
 
-  openVerticallyCentered(content) {
-    this.modalService.open(content, { centered: true });
+  openBackDropCustomClass(content) {
+    this.modalService.open(content, {
+      backdropClass: "light-blue-backdrop",
+      centered: true,
+    });
   }
+
   loginUser() {
     this.isProgressVisible = true; // show the progress indicator as we start the Firebase login process
 

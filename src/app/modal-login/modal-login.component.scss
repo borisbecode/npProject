@@ -1,0 +1,51 @@
+#connexion {
+  background-color: #2f7f57;
+  color: white;
+  border: white;
+}
+
+.inline {
+  margin-top: 5%;
+  font-size: 1.5vh;
+}
+
+#exemplebutton {
+  height: 2vh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.ligne {
+  color: #2f7f57;
+}
+
+.modal-content {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 90vh;
+
+  background-image: url(../../app/images/mvh.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal-body {
+  margin-top: 12vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.card {
+  background-color: #d9c9c9;
+}
+
+/* .modal-body {
+  background-image: url(../../app/images/paper.jpg);
+}
+#modal-header {
+  background-image: url(../../app/images/paper.jpg);
+} */

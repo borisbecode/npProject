@@ -51,7 +51,7 @@
         <a
           class="nav-link mr-3 ml-3"
           *ngIf="!(afAuth.user | async)"
-          routerLink="/login"
+          (click)="toinformation()"
           >login</a
         >
       </li>

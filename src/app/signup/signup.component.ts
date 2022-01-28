@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../services/auth.service";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  selector: "app-signup",
+  templateUrl: "./signup.component.html",
+  styleUrls: ["./signup.component.scss"],
 })
 export class SignupComponent implements OnInit {
   isProgressVisible: boolean;
@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
     private afAuth: AngularFireAuth
   ) {
     this.isProgressVisible = false;
-    this.firebaseErrorMessage = '';
+    this.firebaseErrorMessage = "";
   }
 
   ngOnInit(): void {
@@ -30,12 +30,11 @@ export class SignupComponent implements OnInit {
     } */
 
     this.signupForm = new FormGroup({
-      nom: new FormControl('', Validators.required),
-      prenom: new FormControl('', Validators.required),
-      niveau: new FormControl('', Validators.required),
+      nom: new FormControl("", Validators.required),
+      prenom: new FormControl("", Validators.required),
+      niveau: new FormControl("", Validators.required),
 
-      email: new FormControl('', [Validators.required, Validators.email]),
-      /*  password: new FormControl('', Validators.required), */
+      email: new FormControl("", [Validators.required, Validators.email]),
     });
   }
 

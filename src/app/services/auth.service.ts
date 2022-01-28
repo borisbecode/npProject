@@ -1,14 +1,14 @@
-import { AnimationDriver } from '@angular/animations/browser';
-import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { AnimationDriver } from "@angular/animations/browser";
+import { Injectable } from "@angular/core";
+import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { AngularFirestoreDocument } from "@angular/fire/compat/firestore";
 
-import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Router } from "@angular/router";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class AuthService {
   userLoggedIn: boolean; // other components can check on this variable for the login status of the user
@@ -34,24 +34,28 @@ export class AuthService {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        console.log('Auth Service: loginUser: success');
+        console.log("Auth Service: loginUser: success");
         // this.router.navigate(['/dashboard']);
       })
       .catch((error) => {
-        console.log('Auth Service: login error...');
-        console.log('error code', error.code);
-        console.log('error', error);
+        console.log("Auth Service: login error...");
+        console.log("error code", error.code);
+        console.log("error", error);
         if (error.code) return { isValid: false, message: error.message };
       });
   }
 
   async signupUser(user: any): Promise<any> {
     try {
-      await this.afAuth.createUserWithEmailAndPassword(user.email, user.nom);
+      user.password = user.nom + user.prenom;
+      await this.afAuth.createUserWithEmailAndPassword(
+        user.email,
+        user.password
+      );
       let emailLower = user.email.toLowerCase();
 
       this.afs
-        .doc('/users/' + emailLower) // on a successful signup, create a document in 'users' collection with the new user's info
+        .doc("/users/" + emailLower) // on a successful signup, create a document in 'users' collection with the new user's info
         .set({
           accountType: user.niveau,
           nom: user.nom,
@@ -59,10 +63,10 @@ export class AuthService {
           email: user.email,
           email_lower: emailLower,
           niveau: user.niveau,
-          password: user.nom,
+          password: user.password,
         });
     } catch (error) {
-      console.log('Auth Service: signup error', error);
+      console.log("Auth Service: signup error", error);
       if (error.code) return { isValid: false, message: error.message };
     }
   }
@@ -71,23 +75,23 @@ export class AuthService {
     return this.afAuth
       .signOut()
       .then(() => {
-        this.router.navigate(['/home']); // when we log the user out, navigate them to home
+        this.router.navigate(["/home"]); // when we log the user out, navigate them to home
       })
       .catch((error) => {
-        console.log('Auth Service: logout error...');
-        console.log('error code', error.code);
-        console.log('error', error);
+        console.log("Auth Service: logout error...");
+        console.log("error code", error.code);
+        console.log("error", error);
         if (error.code) return error;
       });
   }
 
   setUserInfo(payload: object) {
-    console.log('Auth Service: saving user info...');
+    console.log("Auth Service: saving user info...");
     this.afs
-      .collection('users')
+      .collection("users")
       .add(payload)
       .then(function (res) {
-        console.log('Auth Service: setUserInfo response...');
+        console.log("Auth Service: setUserInfo response...");
         console.log(res);
       });
   }
