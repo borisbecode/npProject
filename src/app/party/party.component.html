@@ -11,7 +11,11 @@
   </div>
 </div> -->
 
-<div class="container-fluid" id="party">
+<div
+  class="container-fluid"
+  id="party"
+  *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 5"
+>
   <div class="row">
     <div class="col-sm-6 order-sm-1 bg-danger FullScreenright">IM PARTY</div>
     <div class="col-sm-6 order-sm-1 FullScreenleft">IM PARTY</div>

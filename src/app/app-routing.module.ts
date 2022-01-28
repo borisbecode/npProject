@@ -45,7 +45,6 @@ const routes: Routes = [
   {
     path: "honnor",
     component: HonnorComponent,
-    canActivate: [AuthGuard],
   },
   { path: "information", component: InformationComponent },
   { path: "home", component: HomeComponent },

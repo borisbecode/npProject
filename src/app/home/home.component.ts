@@ -17,10 +17,22 @@ export class HomeComponent implements OnInit {
   constructor(
     public afAuth: AngularFireAuth,
     private firestore: AngularFirestore
-  ) {}
+  ) {
+    this.user = null;
+  }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.afAuth.authState.subscribe((user) => {
+      // grab the user object from Firebase Authorization
+      if (user) {
+        let emailLower = user.email.toLowerCase();
+        this.user = this.firestore
+          .collection("users")
+          .doc(emailLower)
+          .valueChanges(); // get the user's doc in Cloud Firestore
+      }
+    });
+  }
   logout(): void {
     this.afAuth.signOut();
   }

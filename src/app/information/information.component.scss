@@ -4,19 +4,44 @@
   font-family: "Major Mono Display", monospace;
 }
 h1 {
+  color: #3d405b;
+  font-size: 1.8rem;
+  font-weight: 600;
   font-family: "Major Mono Display", monospace;
 }
 h2 {
+  color: #3d405b;
+  font-weight: 600;
   font-family: "Major Mono Display", monospace;
+}
+#timer {
+  font-size: 1.5rem;
+}
+
+/* la date en gros  */
+#date {
+  padding-top: 0;
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 2vw;
+}
+
+p {
+  font-weight: 600;
+}
+.youtube {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .leftdate {
-  display: grid;
   place-items: center;
 
   border: 2px solid;
 
-  border-image: linear-gradient(to bottom, #f4f1de, #efd3be, #f4f1de) 0 1;
+  /*   border-image: linear-gradient(to bottom, #f4f1de, #efd3be, #f4f1de) 0 1;  */
+  border-image: linear-gradient(to bottom, #3d405b, #3d405b) 0 1;
   margin: 2%;
   height: 40vh;
 }
@@ -24,16 +49,11 @@ h2 {
   margin: 2%;
   height: 40vh;
 
-  display: grid;
   place-items: center;
 
   border: 2px solid;
 
-  border-image: linear-gradient(to bottom, #efd3be, #f4f1de, #efd3be) 0 1;
-}
-
-#date {
-  font-size: 2.5vw;
+  border-image: linear-gradient(to bottom, #3d405b, #3d405b) 0 1;
 }
 
 .FullScreenright {
@@ -54,6 +74,15 @@ h2 {
 }
 
 @media (max-width: 800px) {
+  #date {
+    padding-top: 0;
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 5vw;
+  }
+  #timer {
+    font-size: 1rem;
+  }
   .FullScreenright {
     height: auto;
     padding-top: 8vh;
@@ -61,25 +90,24 @@ h2 {
     padding-bottom: 1vh;
   }
   .leftdate {
-    display: grid;
     place-items: center;
 
     border: 2px solid;
 
-    border-image: linear-gradient(to left, turquoise, greenyellow) 1 0;
+    border-image: linear-gradient(to left, #3d405b, #3d405b) 1 0;
     margin: 2%;
-    height: 40vh;
+    height: auto;
+    padding-bottom: 2%;
   }
   .rightposition {
     margin: 2%;
-    height: 40vh;
-
+    margin-top: 3vh;
     display: grid;
     place-items: center;
 
     border: 2px solid;
 
-    border-image: linear-gradient(to left, turquoise, greenyellow) 1 0;
+    border-image: linear-gradient(to left, #3d405b, #3d405b) 1 0;
   }
 
   .FullScreenleft {

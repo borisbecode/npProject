@@ -23,11 +23,7 @@ import { Xliff } from "@angular/compiler";
         color: white;
       }
       .light-blue-backdrop {
-        /*      background-image: url(../../app/images/pap.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 30%; */
-        background-color: black;
+        background-color: #292b2c;
       }
     `,
   ],
@@ -64,7 +60,7 @@ export class ModalLoginComponent implements OnInit {
 
   panelOpenState = false;
 
-  openSnackBar(message: "vous etes connectés", action: "close") {
+  openSnackBar(message: string, action: "close") {
     this._snackBar.open(message, action, { duration: 3500 });
   }
 
@@ -86,9 +82,11 @@ export class ModalLoginComponent implements OnInit {
         this.isProgressVisible = false; // no matter what, when the auth service returns, we hide the progress indicator
         if (result == null) {
           // null is success, false means there was an error
+          this.openSnackBar("vous etes connecté(e)s", "close");
           console.log("logging in...");
           this.router.navigate(["/home"]); // when the user is logged in, navigate them to dashboard
         } else if (result.isValid == false) {
+          this.openSnackBar("erreur de mot de passe ou d'email", "close");
           console.log("login error", result);
           this.firebaseErrorMessage = result.message;
         }

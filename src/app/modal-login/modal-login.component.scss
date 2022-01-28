@@ -1,7 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 #connexion {
   background-color: #2f7f57;
   color: white;
   border: white;
+}
+
+#connexion:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .inline {
@@ -15,6 +24,11 @@
 
 .full-width {
   width: 100%;
+  background-color: transparent;
+}
+
+.fieldpassword {
+  background-color: red;
 }
 
 .ligne {
@@ -22,8 +36,6 @@
 }
 
 .modal-content {
-  margin: 0;
-  padding: 0;
   width: 100vw;
   height: 90vh;
 
@@ -34,9 +46,9 @@
 }
 
 .modal-body {
-  margin-top: 12vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-top: 8vh;
+  margin-left: 9vw;
+  margin-right: 9vw;
 }
 
 .card {
@@ -49,3 +61,19 @@
 #modal-header {
   background-image: url(../../app/images/paper.jpg);
 } */
+
+@media (max-aspect-ratio: 18/9) and (min-width: 700px) {
+  .modal-body {
+    margin-top: 12vh;
+    margin-left: 9vw;
+    margin-right: 9vw;
+  }
+}
+
+@media (max-width: 382px) {
+  .modal-body {
+    margin-top: 2vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}

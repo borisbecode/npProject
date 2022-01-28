@@ -23,3 +23,8 @@ font-family: 'Pacifico', cursive;
     background-image: url("../../app/images/NousV1.jpg");
   }
 }
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
