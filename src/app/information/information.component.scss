@@ -83,12 +83,7 @@ p {
   #timer {
     font-size: 1rem;
   }
-  .FullScreenright {
-    height: auto;
-    padding-top: 8vh;
-    background-color: #eab69f;
-    padding-bottom: 1vh;
-  }
+
   .leftdate {
     place-items: center;
 
@@ -108,6 +103,13 @@ p {
     border: 2px solid;
 
     border-image: linear-gradient(to left, #3d405b, #3d405b) 1 0;
+  }
+
+  .FullScreenright {
+    height: auto;
+    padding-top: 8vh;
+    background-color: #eab69f;
+    padding-bottom: 1vh;
   }
 
   .FullScreenleft {

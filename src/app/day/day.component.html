@@ -1,6 +1,84 @@
 <div id="day" class="FullScreen">
   <div class="row">
-    <div class="col-sm">One of three columns</div>
-    <div class="col-sm">One of three columns</div>
+    <div
+      class="col-sm-4 order-lg-1 order-sm-2 FullScreenright text-center justify-content-center"
+    ></div>
+    <div
+      class="col-sm-8 order-lg-2 order-sm-1 FullScreenleft text-center justify-content-center"
+    >
+      <h1>Déroulement de la journée</h1>
+      <h2>cliquez pour plus d'information</h2>
+      <ul class="timeline mr-4 ml-4">
+        <li
+          class="timeline"
+          ngbPopover="You see, I show up on hover!"
+          triggers="mouseenter:mouseleave"
+          popoverTitle="Pop title"
+          placement="left"
+        >
+          <div class="icon done"><i class="fas fa-home"></i></div>
+          <details class="panel">
+            <summary>Le Rendez-vous : 9h00</summary>
+            <p>Rendez vous pour les proches .</p>
+          </details>
+        </li>
+
+        <li class="timeline">
+          <div class="icon done"><i class="fas fa-ring"></i></div>
+          <details class="panel">
+            <summary>La commune : 11h00</summary>
+            <p>Rendez-vous à la commune</p>
+          </details>
+        </li>
+
+        <li class="timeline">
+          <div class="icon done"><i class="fas fa-church"></i></div>
+          <details class="panel">
+            <summary>L'église : 12h00</summary>
+            <p>Rendez vous à l'église</p>
+          </details>
+        </li>
+
+        <li class="timeline">
+          <div class="icon"><i class="fas fa-wine-glass-alt"></i></div>
+          <details class="panel">
+            <summary>Le Vin d'honneur : 14h00</summary>
+            <p>
+              It's real Hawaiian food served in an authentic medieval English
+              dungeon atmosphere.
+            </p>
+          </details>
+        </li>
+
+        <li class="timeline">
+          <div class="icon"><i class="fas fa-utensils"></i></div>
+          <details class="panel">
+            <summary>Le Repas : 15h00</summary>
+            <p>Yeah, I know what it is, but...I'm using it!</p>
+          </details>
+        </li>
+
+        <li class="timeline">
+          <div class="icon"><i class="fas fa-child"></i></div>
+          <details class="panel">
+            <summary>L' Ouverture du bal : 20h00</summary>
+            <p>
+              That’s right, yeah. I’ve had a team working on this over the past
+              few weeks, and what we’ve come up with can be reduced to two
+              fundamental concepts. One, people are not wearing enough hats.
+              Two, matter is energy. In the Universe there are many energy
+            </p>
+          </details>
+        </li>
+
+        <li id="last" class="timeline">
+          <div class="icon"><i class="fas fa-cheese"></i></div>
+          <details class="panel">
+            <summary>Le Gateau : 22h00</summary>
+            <p>Well, you're dead now, so shut up.</p>
+          </details>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -1,9 +1,195 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Major Mono Display", monospace;
+}
+
+h1 {
+  color: #3d405b;
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Major Mono Display", monospace;
+}
+h2 {
+  color: #3d405b;
+  font-weight: 600;
+  font-family: "Major Mono Display", monospace;
+}
+
+summary {
+  color: #3d405b;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .FullScreen {
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgb(166, 255, 0);
+}
+
+.FullScreenright {
+  border-left: solid 1px white;
+  min-height: 100vh;
+  padding-top: 8vh;
+  background-image: url("../../app/images/ring.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 1vh;
+}
+
+.FullScreenleft {
+  min-height: 100vh;
+  padding-top: 8vh;
+
+  background: -webkit-linear-gradient(
+    -1deg,
+    rgb(239, 211, 190) 3%,
+    rgb(234, 182, 159) 97%
+  );
+  background: linear-gradient(-1deg, rgb(239, 211, 190), rgb(234, 182, 159));
+
+  padding-bottom: 1vh;
+}
+
+@media (max-width: 800px) {
+  .FullScreenright {
+    border-left: solid 1px white;
+    height: 20vh;
+    padding-top: 8vh;
+    background-image: url("../../app/images/ring.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-bottom: 1vh;
+  }
+
+  .FullScreenleft {
+    height: auto;
+    padding-top: 8vh;
+    background-color: #eab69f;
+    padding-bottom: 1vh;
+  }
+}
+
+.timeline {
+  list-style: none;
+  padding: 0px 0 20px;
+  position: relative;
+
+  &:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: "";
+    width: 3px;
+    background-color: #3d405b;
+    margin-left: -1.5px;
+    left: 20px;
+
+    @media (min-width: 576px) {
+      left: 50%;
+    }
+  }
+
+  > li {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 5px;
+
+    &:after,
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .panel {
+      width: 100%;
+      float: left;
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      background: #f2e2ce;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+      summary {
+        display: block;
+        user-select: none;
+        outline: none;
+        padding: 20px;
+        margin-bottom: 0px;
+        transition: all 800ms cubic-bezier(0.23, 1, 0.32, 1);
+        transition-property: margin, background;
+        font-weight: 600;
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        &:hover {
+          background: rgba(rgb(255, 0, 0), 0.1);
+        }
+      }
+
+      p {
+        padding-left: 1vw;
+      }
+
+      &[open] summary {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(red, 0.1);
+      }
+    }
+
+    @media (min-width: 576px) {
+      padding-left: 0px;
+
+      .panel {
+        width: 50%;
+      }
+
+      &:not(:nth-child(even)) {
+        padding-right: 90px;
+      }
+
+      &:nth-child(even) {
+        padding-left: 90px;
+        > :nth-child(even) {
+          float: right;
+        }
+      }
+    }
+
+    > {
+      /*  LES BOULES */
+      .icon {
+        color: #f2e2ce;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 2.5em;
+        text-align: center;
+        position: absolute;
+        left: 20px;
+        margin-left: -25px;
+        background-color: #bf6e5e;
+        z-index: 999;
+        border-radius: 50%;
+
+        @media (min-width: 576px) {
+          left: 50%;
+        }
+
+        &.working {
+          color: #3d405b;
+          &:before {
+            content: "\f017";
+          }
+        }
+      }
+    }
+  }
 }

@@ -66,6 +66,8 @@ import { PartyComponent } from "./party/party.component";
 import { PicturesComponent } from "./pictures/pictures.component";
 import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
 import { ModalLoginComponent } from "./modal-login/modal-login.component";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 @NgModule({
   declarations: [
@@ -149,4 +151,6 @@ import { ModalLoginComponent } from "./modal-login/modal-login.component";
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  faCoffee = faCoffee;
+}
