@@ -1,6 +1,33 @@
 <div id="pictures" class="FullScreen">
-  <div class="row">
-    <div class="col-sm">IM PICTURES</div>
-    <div class="col-sm">IM PICTURES</div>
+  <div id="toit" class="row justify-center justify-content-center">
+    <div id="photo" class="col-8">
+      <ngb-carousel
+        #carousel
+        [interval]="5000"
+        [pauseOnHover]="pauseOnHover"
+        [pauseOnFocus]="pauseOnFocus"
+        (slide)="onSlide($event)"
+      >
+        <ng-template ngbSlide *ngFor="let img of images; index as i">
+          <div class="carousel-caption justify-content-center">
+            <h3>My slide {{ i + 1 }} title</h3>
+          </div>
+          <a
+            href="https://www.google.fr/?q=Number+{{ i + 1 }}"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <div class="picsum-img-wrapper">
+              <img [src]="img" alt="My image {{ i + 1 }} description" />
+            </div>
+          </a>
+        </ng-template>
+      </ngb-carousel>
+    </div>
   </div>
+
+  <!-- <div class="row">
+    <div class="col-sm">IM PICTURES</div>
+    <div class="col-sm">IM PICTURES</div>
+  </div> -->
 </div>

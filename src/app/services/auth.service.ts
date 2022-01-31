@@ -70,6 +70,28 @@ export class AuthService {
       if (error.code) return { isValid: false, message: error.message };
     }
   }
+  async signupUserViaAdmin(user: any): Promise<any> {
+    try {
+      user.password = user.nom + user.prenom;
+
+      let emailLower = user.email.toLowerCase();
+
+      this.afs
+        .doc("/users/" + emailLower) // on a successful signup, create a document in 'users' collection with the new user's info
+        .set({
+          accountType: user.niveau,
+          nom: user.nom,
+          prenom: user.prenom,
+          email: user.email,
+          email_lower: emailLower,
+          niveau: user.niveau,
+          password: user.password,
+        });
+    } catch (error) {
+      console.log("Auth Service: signup error", error);
+      if (error.code) return { isValid: false, message: error.message };
+    }
+  }
 
   logoutUser(): Promise<void> {
     return this.afAuth

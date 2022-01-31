@@ -1,56 +1,84 @@
-<mat-card class="form-card">
-  <form [formGroup]="signupForm" (ngSubmit)="signup()">
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Nom</mat-label>
-        <input
-          autocomplete="off"
-          formControlName="nom"
-          type="text"
-          matInput
-          placeholder="Nom de famille"
-        />
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Prenom</mat-label>
-        <input formControlName="prenom" matInput placeholder="cathy" />
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input
-          formControlName="email"
-          type="email"
-          matInput
-          placeholder="Email"
-        />
-      </mat-form-field>
-    </p>
+<div id="center" class="form-card justify-content-center">
+  <form class="big" [formGroup]="signupForm" (ngSubmit)="signup()">
+    <button class="btn btn-primary btn-sm mb-5" routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <p>Return Home</p>
+    </button>
+    <div class="row pb-3">
+      <div class="col-sm-6 order-sm-1">
+        <p>
+          <mat-form-field appearance="outline" class="order-sm-1 order-md-1">
+            <mat-label>Nom</mat-label>
+            <input
+              autocomplete="off"
+              formControlName="nom"
+              type="text"
+              matInput
+              placeholder="Nom de famille"
+              #nom
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline" class="order-sm-3 order-md-3">
+            <mat-label>Prenom</mat-label>
+            <input
+              type="text"
+              formControlName="prenom"
+              matInput
+              placeholder="cathy"
+              #prenom
+            />
+          </mat-form-field>
+        </p>
 
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-select required formControlName="niveau">
-          <mat-option value="1">admin</mat-option>
-          <mat-option value="2">temoin</mat-option>
-          <mat-option value="3">invité pour la journée</mat-option>
-          <mat-option value="4">invité pour le vin d'honneur</mat-option>
-          <mat-option value="5">invité pour la soirée</mat-option>
-        </mat-select>
-        <mat-label
-          ><mat-icon>favorite</mat-icon> Niveau d'invitation
-        </mat-label>
-      </mat-form-field>
-    </p>
-    <div *ngIf="firebaseErrorMessage != ''" class="error-style">
-      <span>{{ firebaseErrorMessage }}</span>
+        <button
+          type="button "
+          class="btn btn-primary order-sm-5 order-md-5"
+          (click)="clickme()"
+        >
+          mot de passe :
+        </button>
+        <h1 class="order-sm-6 order-md-6">{{ myusername }}</h1>
+      </div>
+
+      <div class="col-sm-6 order-sm-2">
+        <p>
+          <mat-form-field appearance="outline" class="order-sm-2 order-md-2">
+            <mat-label>Email</mat-label>
+            <input
+              formControlName="email"
+              type="email"
+              matInput
+              placeholder="Email"
+            />
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="outline" class="order-sm-4 order-md-4">
+            <mat-select required formControlName="niveau">
+              <mat-option value="1">admin</mat-option>
+              <mat-option value="2">temoin</mat-option>
+              <mat-option value="3">invité pour la journée</mat-option>
+              <mat-option value="4">invité pour le vin d'honneur</mat-option>
+              <mat-option value="5">invité pour la soirée</mat-option>
+            </mat-select>
+            <mat-label
+              ><mat-icon>favorite</mat-icon> Niveau d'invitation
+            </mat-label>
+          </mat-form-field>
+        </p>
+        <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+          <span>{{ firebaseErrorMessage }}</span>
+        </div>
+        <button class="btn btn-primary order-sm-7 order-md-7">
+          Enregistrer l'invité
+        </button>
+      </div>
     </div>
-
-    <button mat-raised-button color="primary">Enregistrer l'invité</button>
   </form>
-</mat-card>
+</div>
 
 <div
   class="progressIndicator"

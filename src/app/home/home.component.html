@@ -3,10 +3,10 @@
 
 <app-information></app-information>
 <app-day
-  *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 3"
+  *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 4"
 ></app-day>
-<app-honnor *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 4">
-</app-honnor>
+<!-- <app-honnor *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 4">
+</app-honnor> -->
 <app-party
   *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 5"
 ></app-party>

@@ -1,0 +1,31 @@
+.background {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background-color: #e9591a;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../app/images/new.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#end {
+  margin-top: 36vh;
+}
+
+.neon {
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
+    0 0 40px rgb(255, 0, 234), 0 0 80px rgb(236, 90, 255),
+    0 0 90px rgb(255, 0, 234), 0 0 100px rgb(255, 0, 255),
+    0 0 150px rgb(255, 0, 242);
+}
+
+/*Mobile*/
+@media (max-width: 800px) {
+  #end {
+    margin-top: 10vh;
+  }
+}

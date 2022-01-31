@@ -24,17 +24,17 @@
       <li class="nav-item" (click)="today()">
         <a
           class="nav-link mr-3 ml-3"
-          *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 3"
+          *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 4"
           >Journée</a
         >
       </li>
-      <li class="nav-item" (click)="tohonnor()">
+      <!--  <li class="nav-item" (click)="tohonnor()">
         <a
           class="nav-link mr-3 ml-3"
           *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 4"
           >Vin d'honneur</a
         >
-      </li>
+      </li> -->
       <li class="nav-item" (click)="toparty()">
         <a
           class="nav-link mr-3 ml-3"
