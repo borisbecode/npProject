@@ -14,9 +14,10 @@ export class PicturesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  images = [62, 83, 466, 965, 982, 1043, 738].map(
-    (n) => `https://picsum.photos/id/${n}/1200/500`
-  );
+  images = [
+    "http://drive.google.com/uc?export=view&id=1IU5o6l0xCEemdx9a0_qxNMSNFHTRGXeV",
+    "http://drive.google.com/uc?export=view&id=14zg8frqZCJ5S9zgcuS0lLnik0E-Y1Rak",
+  ];
 
   paused = false;
   unpauseOnArrow = false;

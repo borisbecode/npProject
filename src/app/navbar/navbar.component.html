@@ -24,7 +24,7 @@
       <li class="nav-item" (click)="today()">
         <a
           class="nav-link mr-3 ml-3"
-          *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 4"
+          *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 5"
           >Journée</a
         >
       </li>
@@ -39,12 +39,12 @@
         <a
           class="nav-link mr-3 ml-3"
           *ngIf="(afAuth.user | async) && (user | async)?.accountType <= 5"
-          >IceBreaker</a
+          >Ajouter une photo</a
         >
       </li>
 
       <li class="nav-item" (click)="topictures()">
-        <a class="nav-link mr-3 ml-3" *ngIf="afAuth.user | async">Photos</a>
+        <a class="nav-link mr-3 ml-3" *ngIf="afAuth.user | async">Photomaton</a>
       </li>
 
       <li class="nav-item">

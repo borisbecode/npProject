@@ -8,7 +8,7 @@
         [pauseOnFocus]="pauseOnFocus"
         (slide)="onSlide($event)"
       >
-        <ng-template ngbSlide *ngFor="let img of images; index as i">
+        <ng-template ngbSlide *ngFor="let img of images">
           <div class="carousel-caption justify-content-center">
             <h3>My slide {{ i + 1 }} title</h3>
           </div>
@@ -18,7 +18,11 @@
             rel="nofollow noopener noreferrer"
           >
             <div class="picsum-img-wrapper">
-              <img [src]="img" alt="My image {{ i + 1 }} description" />
+              <img
+                [src]="img"
+                alt="My image {{ i + 1 }} description"
+                style="width: 600px; max-width: 100%; height: auto"
+              />
             </div>
           </a>
         </ng-template>

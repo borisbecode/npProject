@@ -68,6 +68,9 @@ import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
 import { ModalLoginComponent } from "./modal-login/modal-login.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { UploadmanagerComponent } from "./uploadmanager/uploadmanager.component";
+import { UploadtaskComponent } from "./uploadtask/uploadtask.component";
+import { DropzoneDirective } from "./directives/dropzone.directive";
 
 @NgModule({
   declarations: [
@@ -86,6 +89,9 @@ import { faCoffee } from "@fortawesome/free-solid-svg-icons";
     PartyComponent,
     PicturesComponent,
     ModalLoginComponent,
+    UploadmanagerComponent,
+    UploadtaskComponent,
+    DropzoneDirective,
   ],
   imports: [
     NgxPageScrollCoreModule.forRoot({

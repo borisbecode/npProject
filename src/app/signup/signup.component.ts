@@ -71,7 +71,7 @@ export class SignupComponent implements OnInit {
 
     this.isProgressVisible = true;
     this.authService
-      .signupUserViaAdmin(this.signupForm.value)
+      .signupUser(this.signupForm.value)
       .then((result) => {
         if (result == null) {
           this.openSnackBar(
