@@ -72,8 +72,9 @@ p {
   background-size: cover;
   padding-bottom: 1vh;
 }
-
 @media (max-width: 800px) {
+}
+@media (max-width: 600px) {
   #date {
     padding-top: 0;
     margin-top: 0;

@@ -1,65 +1,67 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Major Mono Display", monospace;
-}
+@media (max-aspect-ratio: 18/9) and (min-width: 700px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Major Mono Display", monospace;
+  }
 
-h1 {
-  color: #3d405b;
-  font-size: 1.8rem;
-  font-weight: 600;
-  font-family: "Major Mono Display", monospace;
-}
-h2 {
-  color: #3d405b;
-  font-weight: 600;
-  font-family: "Major Mono Display", monospace;
-}
+  h1 {
+    color: #3d405b;
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: "Major Mono Display", monospace;
+  }
+  h2 {
+    color: #3d405b;
+    font-weight: 600;
+    font-family: "Major Mono Display", monospace;
+  }
 
-summary {
-  color: #3d405b;
-  font-weight: 600;
-  font-size: 1rem;
-}
+  summary {
+    color: #3d405b;
+    font-weight: 600;
+    font-size: 1rem;
+  }
 
-.FullScreen {
-  min-height: 100vh;
-  background-color: rgb(166, 255, 0);
-}
+  .FullScreen {
+    min-height: 100vh;
+    background-color: rgb(166, 255, 0);
+  }
 
-.FullScreenright {
-  border-left: solid 1px white;
-  min-height: 100vh;
-  padding-top: 8vh;
-  background-image: url("../../app/images/ring.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding-bottom: 1vh;
-}
-
-.FullScreenleft {
-  min-height: 100vh;
-  padding-top: 8vh;
-
-  background: -webkit-linear-gradient(
-    -1deg,
-    rgb(239, 211, 190) 3%,
-    rgb(234, 182, 159) 97%
-  );
-  background: linear-gradient(-1deg, rgb(239, 211, 190), rgb(234, 182, 159));
-
-  padding-bottom: 1vh;
-}
-
-@media (max-width: 800px) {
   .FullScreenright {
-    border-left: solid 1px white;
-    height: 20vh;
+    /* border-left: solid 1px white; */
+    min-height: 100vh;
     padding-top: 8vh;
     background-image: url("../../app/images/ring.jpg");
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: cover;
+    padding-bottom: 1vh;
+  }
+
+  .FullScreenleft {
+    min-height: 100vh;
+    padding-top: 8vh;
+
+    background: -webkit-linear-gradient(
+      -1deg,
+      rgb(239, 211, 190) 3%,
+      rgb(234, 182, 159) 97%
+    );
+    background: linear-gradient(-1deg, rgb(239, 211, 190), rgb(234, 182, 159));
+
+    padding-bottom: 1vh;
+  }
+}
+/*Mobile*/
+
+@media (max-width: 800px) {
+  .FullScreenright {
+    height: 20vh;
+
+    background-image: url("../../app/images/ring.jpg");
+    background-repeat: no-repeat;
+    background-position-y: 30%;
     background-size: cover;
     padding-bottom: 1vh;
   }
@@ -181,6 +183,9 @@ summary {
 
         @media (min-width: 576px) {
           left: 50%;
+        }
+        @media (max-width: 800px) {
+          display: none;
         }
 
         &.working {
