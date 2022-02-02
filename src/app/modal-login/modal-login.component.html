@@ -15,8 +15,13 @@
     </div>
     <div class="modal-body">
       <mat-card class="card">
-        <form [formGroup]="loginForm" (ngSubmit)="loginUser()" type="">
-          <h3>Pour vous connectez rien de plus simple :</h3>
+        <form
+          ngNativeValidate
+          [formGroup]="loginForm"
+          (ngSubmit)="loginUser()"
+          type=""
+        >
+          <h3>Pour vous connecter rien de plus simple :</h3>
           <mat-tab-group color="accent" mat-align-tabs="start">
             <mat-tab label="Email">
               - L'email que vous nous avez renseigné dans les différents
