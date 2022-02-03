@@ -8,6 +8,8 @@ import { Observable } from "rxjs";
 import { finalize, tap } from "rxjs/operators";
 
 import { getDatabase, ref, child, get, push } from "firebase/database";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { DashboardComponent } from "../dashboard/dashboard.component";
 
 @Component({
   selector: "app-uploadtask",
@@ -22,17 +24,22 @@ export class UploadtaskComponent implements OnInit {
   snapshot: Observable<any>;
   downloadURL: string;
   database = getDatabase();
+  user: Observable<any>;
 
   constructor(
     private storage: AngularFireStorage,
-    private db: AngularFirestore
-  ) {}
+    private db: AngularFirestore,
+    private afAuth: AngularFireAuth,
+    private firestore: AngularFirestore
+  ) {
+    this.user = null;
+  }
 
   ngOnInit(): void {
     this.startUpload();
-
-    // ...
   }
+
+  // ...
 
   startUpload() {
     console.log("uploading file", this.file);
@@ -49,24 +56,31 @@ export class UploadtaskComponent implements OnInit {
       // emits a snapshot of the transfer progress every few hundred milliseconds
       tap(console.log),
       finalize(async () => {
-        // after the observable completes, get the file's download URL
-        this.downloadURL = await ref.getDownloadURL().toPromise();
+        this.afAuth.authState.subscribe(async (user) => {
+          console.log("Dashboard: user", user);
+          console.log(user.email);
 
-        this.db
-          .collection("files")
-          .doc(uniqueSafeName)
-          .set({
-            storagePath: path,
-            downloadURL: this.downloadURL,
-            originalName: this.file.name,
-            timestamp: timestamp,
-          })
-          .then(function () {
-            console.log("document written!");
-          })
-          .catch(function (error) {
-            console.error("Error writing document:", error);
-          });
+          // after the observable completes, get the file's download URL
+          this.downloadURL = await ref.getDownloadURL().toPromise();
+
+          this.db
+            .collection("files")
+            .doc(uniqueSafeName)
+            .set({
+              storagePath: path,
+              downloadURL: this.downloadURL,
+              originalName: this.file.name,
+              timestamp: timestamp,
+              posted: user.email,
+            })
+
+            .then(function () {
+              console.log("document written!");
+            })
+            .catch(function (error) {
+              console.error("Error writing document:", error);
+            });
+        });
       })
     );
   }

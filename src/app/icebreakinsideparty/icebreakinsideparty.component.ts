@@ -1,16 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { AngularFirestore } from "@angular/fire/compat/firestore";
-import * as firebase from "firebase/compat";
-import { doc, getDoc } from "firebase/firestore";
-import { getDatabase, ref, set } from "firebase/database";
+
 import { Injectable } from "@angular/core";
-import {
-  AngularFireDatabase,
-  AngularFireList,
-} from "@angular/fire/compat/database";
-import { HttpClient } from "@angular/common/http";
+
 import { Observable } from "rxjs";
 import { ProductionService } from "../services/production.service";
+import { AuthService } from "../services/auth.service";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
 @Injectable({
   providedIn: "root",
 })
@@ -21,6 +16,7 @@ import { ProductionService } from "../services/production.service";
 })
 export class IcebreakinsidepartyComponent implements OnInit {
   files: Observable<any[]>;
+
   constructor(private ps: ProductionService) {}
   ngOnInit(): void {
     this.files = this.ps.getProducts();

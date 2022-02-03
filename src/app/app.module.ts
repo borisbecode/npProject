@@ -157,6 +157,7 @@ import { IcebreakinsidepartyComponent } from "./icebreakinsideparty/icebreakinsi
     NavbarComponent,
     ModalLoginComponent,
     LoginComponent,
+    DashboardComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

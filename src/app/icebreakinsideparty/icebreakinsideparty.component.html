@@ -4,7 +4,7 @@
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title>
-            <h4>Fichier : {{ file.originalName }}</h4></mat-card-title
+            <h4>{{ file.posted }}</h4></mat-card-title
           >
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-header>
@@ -26,9 +26,3 @@
     </div>
   </div>
 </div>
-
-<ul>
-  <li class="text" *ngFor="let file of files | async">
-    {{ file.originalName }}
-  </li>
-</ul>
