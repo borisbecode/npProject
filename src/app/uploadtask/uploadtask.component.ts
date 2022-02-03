@@ -7,6 +7,8 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { Observable } from "rxjs";
 import { finalize, tap } from "rxjs/operators";
 
+import { getDatabase, ref, child, get, push } from "firebase/database";
+
 @Component({
   selector: "app-uploadtask",
   templateUrl: "./uploadtask.component.html",
@@ -19,6 +21,7 @@ export class UploadtaskComponent implements OnInit {
   percentage: Observable<number>;
   snapshot: Observable<any>;
   downloadURL: string;
+  database = getDatabase();
 
   constructor(
     private storage: AngularFireStorage,
@@ -27,6 +30,8 @@ export class UploadtaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.startUpload();
+
+    // ...
   }
 
   startUpload() {

@@ -2,12 +2,27 @@
   margin: 0;
   padding: 0;
 }
+.FullScreenleft {
+  /* border-left: solid 1px white; */
+  min-height: 100vh;
+  padding-top: 8vh;
+  background-image: url("../../app/images/background.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 1vh;
+}
 
 .FullScreenright {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 8vh;
-}
-.FullScreenleft {
-  height: 100vh;
-  padding-top: 8vh;
+
+  background: -webkit-linear-gradient(
+    -1deg,
+    rgb(239, 211, 190) 3%,
+    rgb(234, 182, 159) 97%
+  );
+  background: linear-gradient(-1deg, rgb(239, 211, 190), rgb(234, 182, 159));
+
+  padding-bottom: 1vh;
 }

@@ -72,6 +72,8 @@ import { UploadmanagerComponent } from "./uploadmanager/uploadmanager.component"
 import { UploadtaskComponent } from "./uploadtask/uploadtask.component";
 import { DropzoneDirective } from "./directives/dropzone.directive";
 
+import { IcebreakinsidepartyComponent } from "./icebreakinsideparty/icebreakinsideparty.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,6 +94,8 @@ import { DropzoneDirective } from "./directives/dropzone.directive";
     UploadmanagerComponent,
     UploadtaskComponent,
     DropzoneDirective,
+
+    IcebreakinsidepartyComponent,
   ],
   imports: [
     NgxPageScrollCoreModule.forRoot({

@@ -1,4 +1,4 @@
-<div
+<!-- <div
   class="dropzone"
   dropzone
   (hovered)="toggleHover($event)"
@@ -8,10 +8,19 @@
   <h3>Drag & Drop files here</h3>
 
   <div>
-    <label>
-      <input type="file" (change)="onDrop($event.target.files)" />
-    </label>
+    <label for="file">Choose File</label>
+    <input type="file" (change)="onDrop($event.target.files)" />
   </div>
+</div> -->
+
+<div class="mb-3">
+  <label for="formFile" class="form-label">Default file input example</label>
+  <input
+    class="form-control"
+    type="file"
+    id="formFile"
+    (change)="onDrop($event.target.files)"
+  />
 </div>
 
 <div *ngIf="files.length > 0">
