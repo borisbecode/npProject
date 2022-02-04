@@ -5,13 +5,9 @@ import {
 } from "@angular/fire/compat/firestore";
 import { Observable } from "rxjs";
 import { Item } from "./item";
-import { switchMap } from "rxjs";
+
 import { AngularFireAuth } from "@angular/fire/compat/auth";
-import {
-  AngularFireDatabase,
-  AngularFireList,
-} from "@angular/fire/compat/database";
-import { DocumentReference } from "firebase/firestore";
+import { data } from "jquery";
 
 @Injectable({
   providedIn: "root",
@@ -20,8 +16,7 @@ export class ProductionService {
   itemsCollection: AngularFirestoreCollection<Item>;
   information: Observable<any[]>;
   utilisateur: string;
-  coucou: Observable<any>;
-  courses: Observable<any[]>;
+  prenom: string;
 
   constructor(
     private db: AngularFirestore,
@@ -37,7 +32,25 @@ export class ProductionService {
       }
     });
 
-    this.information = this.afs.collection("users/").valueChanges();
+    /*  this.information = this.afs.collection("users/").valueChanges(); */
+  }
+
+  async myFunction() {
+    const doc = await this.afs
+      .doc(`users/${this.utilisateur}`)
+      .get()
+      .toPromise();
+
+    if (doc.exists) {
+      console.log("The doc exists!");
+      const datas = doc.data();
+      console.log(datas);
+      return datas;
+      //
+      //
+    } else {
+      console.log("No doc data");
+    }
   }
 
   getItems() {

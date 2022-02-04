@@ -25,6 +25,7 @@ import {
   where,
   getDoc,
 } from "firebase/firestore";
+import { data } from "jquery";
 
 @Component({
   selector: "app-uploadtask",
@@ -62,44 +63,26 @@ export class UploadtaskComponent implements OnInit {
       if (user) {
         this.email = user.email;
 
-        console.log(this.email);
+        this.Userinformation();
       }
     });
-
-    this.ProductionService.getItems().subscribe((items) => {
-      console.log(items);
-
-      this.Info = items;
-      console.log(this.Info);
-    });
-
-    /* var docRef = this.afs.doc(`users/${this.email}`);
-
-    docRef
-      .get()
-      .toPromise()
-      .then((doc) => {
-        console.log("Document data:", doc.data());
-      })
-      .catch((error) => {
-        console.log("Error getting document:", error);
-      }); */
   }
 
-  async myFunction() {
+  async Userinformation() {
     const doc = await this.afs.doc(`users/${this.email}`).get().toPromise();
 
     if (doc.exists) {
       console.log("The doc exists!");
       const data = doc.data();
-      const prenom = data.prenom;
-      // TODO do something with the birthday
+
+      console.log(data);
+
+      //
+      //
     } else {
       console.log("No doc data");
     }
   }
-
-  // ...
 
   startUpload() {
     console.log("uploading file", this.file);

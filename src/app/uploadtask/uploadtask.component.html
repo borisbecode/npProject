@@ -33,16 +33,3 @@
     Resume
   </button>
 </div>
-
-<div *ngIf="userDoc$ | async as doc">
-  <ng-container *ngIf="!doc.exists">
-    <p>Doc does not exist</p>
-  </ng-container>
-
-  <ng-container *ngIf="doc.exists">
-    <pre>
-        {{ doc | json }}
-      </pre
-    >
-  </ng-container>
-</div>
