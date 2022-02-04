@@ -42,8 +42,6 @@ export class UploadtaskComponent implements OnInit {
   user: Observable<any[]>;
   Info: Item[];
   email: string;
-  userDoc$: Observable<any> | undefined;
-  prenom: string;
 
   constructor(
     private storage: AngularFireStorage,
