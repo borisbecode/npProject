@@ -132,6 +132,7 @@ export class UploadtaskComponent implements OnInit {
             downloadURL: this.downloadURL,
             originalName: this.file.name,
             timestamp: timestamp,
+            posted: "",
           })
 
           .then(function () {
