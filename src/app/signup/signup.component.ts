@@ -72,6 +72,7 @@ export class SignupComponent implements OnInit {
     this.isProgressVisible = true;
     this.authService
       .signupUser(this.signupForm.value)
+
       .then((result) => {
         if (result == null) {
           this.openSnackBar(
@@ -87,8 +88,28 @@ export class SignupComponent implements OnInit {
 
         this.isProgressVisible = false; // no matter what, when the auth service returns, we hide the progress indicator
       })
+
       .catch(() => {
         this.isProgressVisible = false;
+      });
+  }
+
+  logout(): void {
+    this.afAuth.signOut();
+  }
+
+  loginUserAdmin(email: string, password: string): Promise<any> {
+    return this.afAuth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log("Auth Service: loginUser: success");
+        this.router.navigate(["/admin"]);
+      })
+      .catch((error) => {
+        console.log("Auth Service: login error...");
+        console.log("error code", error.code);
+        console.log("error", error);
+        if (error.code) return { isValid: false, message: error.message };
       });
   }
 }

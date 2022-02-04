@@ -6,6 +6,7 @@ import { AngularFirestoreDocument } from "@angular/fire/compat/firestore";
 
 import { Router } from "@angular/router";
 import { BehaviorSubject, Observable } from "rxjs";
+import { getAuth, updateProfile } from "firebase/auth";
 
 @Injectable({
   providedIn: "root",
@@ -52,6 +53,7 @@ export class AuthService {
         user.email,
         user.password
       );
+
       let emailLower = user.email.toLowerCase();
 
       this.afs
@@ -65,6 +67,10 @@ export class AuthService {
           niveau: user.niveau,
           password: user.password,
         });
+      const auth = getAuth();
+      await updateProfile(auth.currentUser, {
+        displayName: user.prenom,
+      }).catch((err) => console.log(err));
     } catch (error) {
       console.log("Auth Service: signup error", error);
       if (error.code) return { isValid: false, message: error.message };
@@ -73,6 +79,10 @@ export class AuthService {
   async signupUserViaAdmin(user: any): Promise<any> {
     try {
       user.password = user.nom + user.prenom;
+      await this.afAuth.createUserWithEmailAndPassword(
+        user.email,
+        user.password
+      );
 
       let emailLower = user.email.toLowerCase();
 

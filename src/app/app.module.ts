@@ -1,9 +1,8 @@
 import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 import { HomeComponent } from "./home/home.component";
 import { SignupComponent } from "./signup/signup.component";
 import { LoginComponent } from "./login/login.component";
@@ -73,6 +72,11 @@ import { UploadtaskComponent } from "./uploadtask/uploadtask.component";
 import { DropzoneDirective } from "./directives/dropzone.directive";
 
 import { IcebreakinsidepartyComponent } from "./icebreakinsideparty/icebreakinsideparty.component";
+import { CarouselModule } from "primeng/carousel";
+import { ButtonModule } from "primeng/button";
+import { ToastModule } from "primeng/toast";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -139,7 +143,8 @@ import { IcebreakinsidepartyComponent } from "./icebreakinsideparty/icebreakinsi
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-
+    BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -150,6 +155,7 @@ import { IcebreakinsidepartyComponent } from "./icebreakinsideparty/icebreakinsi
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     NgbModule,
+    CarouselModule,
   ],
   exports: [
     SignupComponent,

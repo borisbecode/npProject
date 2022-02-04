@@ -14,6 +14,7 @@ Dashboard
     >Display Name (lower):
     {{ (user | async)?.displayName_lower }}</mat-list-item
   >
+  <p>prenom : {{ (user | async)?.prenom }}</p>
   <mat-list-item>Email: {{ (user | async)?.email }}</mat-list-item>
   <mat-list-item
     >Email (lower): {{ (user | async)?.email_lower }}</mat-list-item

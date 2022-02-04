@@ -1,5 +1,5 @@
 <div id="center" class="form-card justify-content-center">
-  <form class="big" [formGroup]="signupForm" (ngSubmit)="signup()">
+  <form class="big" [formGroup]="signupForm" (ngSubmit)="signup(); logout()">
     <button class="btn btn-primary btn-sm mb-5" routerLink="/home">
       <mat-icon>home</mat-icon>
       <p>Return Home</p>
