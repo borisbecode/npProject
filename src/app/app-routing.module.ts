@@ -9,8 +9,8 @@ import { SignupComponent } from "./signup/signup.component";
 
 import { AuthGuard } from "./services/auth.guard";
 import { HomepageComponent } from "./homepage/homepage.component";
-import { PartyComponent } from "./party/party.component";
-import { PicturesComponent } from "./pictures/pictures.component";
+import { PartyComponent } from "./Icebreak/party.component";
+import { PicturesComponent } from "./Photomaton/pictures.component";
 import { DayComponent } from "./day/day.component";
 import { HonnorComponent } from "./honnor/honnor.component";
 import { InformationComponent } from "./information/information.component";

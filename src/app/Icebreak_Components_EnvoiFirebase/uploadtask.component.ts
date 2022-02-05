@@ -7,25 +7,14 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { Observable } from "rxjs";
 import { finalize, tap } from "rxjs/operators";
 
-import { getDatabase, ref, child, get, push } from "firebase/database";
+import { getDatabase } from "firebase/database";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
-import { DashboardComponent } from "../dashboard/dashboard.component";
-import { AngularFireDatabase } from "@angular/fire/compat/database";
 
 import { ProductionService } from "../services/production.service";
 import { Item } from "../services/item";
-import {
-  doc,
-  getFirestore,
-  collection,
-  onSnapshot,
-  addDoc,
-  deleteDoc,
-  query,
-  where,
-  getDoc,
-} from "firebase/firestore";
-import { data } from "jquery";
+
+import { usermail } from "../services/userinformation";
+import { email } from "../services/userinformation";
 
 @Component({
   selector: "app-uploadtask",
@@ -39,26 +28,20 @@ export class UploadtaskComponent implements OnInit {
   percentage: Observable<number>;
   snapshot: Observable<any>;
   downloadURL: string;
-  database = getDatabase();
-  user: Observable<any[]>;
-  Info: Item[];
-  email: string;
+
+  email: email[] | string;
+  prenom: string;
 
   constructor(
     private storage: AngularFireStorage,
     private db: AngularFirestore,
     private afAuth: AngularFireAuth,
-    private firestore: AngularFirestore,
-    private af: AngularFireDatabase,
+
     private afs: AngularFirestore,
-    private ps: ProductionService,
-    private ProductionService: ProductionService
-  ) {
-    this.user = this.ps.getProductsUser();
-  }
+    private ps: ProductionService
+  ) {}
 
   ngOnInit(): void {
-    this.startUpload();
     this.afAuth.authState.subscribe(async (user) => {
       if (user) {
         this.email = user.email;
@@ -66,16 +49,19 @@ export class UploadtaskComponent implements OnInit {
         this.Userinformation();
       }
     });
+    this.startUpload();
   }
 
   async Userinformation() {
-    const doc = await this.afs.doc(`users/${this.email}`).get().toPromise();
+    const doc = await this.afs
+      .doc<usermail>(`users/${this.email}`)
+      .get()
+      .toPromise();
 
     if (doc.exists) {
       console.log("The doc exists!");
       const data = doc.data();
-
-      console.log(data);
+      this.prenom = data.prenom;
 
       //
       //
@@ -99,9 +85,6 @@ export class UploadtaskComponent implements OnInit {
       // emits a snapshot of the transfer progress every few hundred milliseconds
       tap(console.log),
       finalize(async () => {
-        /*  this.afAuth.authState.subscribe(async (user) => {
-          console.log("Dashboard: user", user); */
-
         // after the observable completes, get the file's download URL
         this.downloadURL = await ref.getDownloadURL().toPromise();
 
@@ -113,7 +96,7 @@ export class UploadtaskComponent implements OnInit {
             downloadURL: this.downloadURL,
             originalName: this.file.name,
             timestamp: timestamp,
-            posted: "",
+            posted: this.prenom,
           })
 
           .then(function () {
@@ -122,7 +105,6 @@ export class UploadtaskComponent implements OnInit {
           .catch(function (error) {
             console.error("Error writing document:", error);
           });
-        /*  }); */
       })
     );
   }
@@ -132,9 +114,5 @@ export class UploadtaskComponent implements OnInit {
       snapshot.state === "running" &&
       snapshot.bytesTransferred < snapshot.totalBytes
     );
-  }
-
-  getCurrentUser() {
-    console.log(this.afAuth.currentUser); // returns user object for logged-in users, otherwise returns null
   }
 }

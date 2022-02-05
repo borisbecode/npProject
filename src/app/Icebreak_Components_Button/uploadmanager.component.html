@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row justify-content-around mt-5">
+    <div class="col">
+      <button type="button" class="btn btn-primary">Challenge moi</button>
+    </div>
+    <div class="col"><h2>ou</h2></div>
+    <div class="col">
+      <span class="btn btn-primary btn-file">
+        Envoyer une photo
+        <input
+          type="file"
+          id="formFile"
+          (change)="onDrop($event.target.files)"
+        />
+      </span>
+    </div>
+
+    <div *ngFor="let file of files">
+      <app-uploadtask [file]="file"></app-uploadtask>
+    </div>
+  </div>
+</div>

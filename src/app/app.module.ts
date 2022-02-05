@@ -61,20 +61,18 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { DayComponent } from "./day/day.component";
 import { InformationComponent } from "./information/information.component";
 import { HonnorComponent } from "./honnor/honnor.component";
-import { PartyComponent } from "./party/party.component";
-import { PicturesComponent } from "./pictures/pictures.component";
+import { PartyComponent } from "./Icebreak/party.component";
+import { PicturesComponent } from "./Photomaton/pictures.component";
 import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
 import { ModalLoginComponent } from "./modal-login/modal-login.component";
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { UploadmanagerComponent } from "./uploadmanager/uploadmanager.component";
-import { UploadtaskComponent } from "./uploadtask/uploadtask.component";
+import { UploadmanagerComponent } from "./Icebreak_Components_Button/uploadmanager.component";
+import { UploadtaskComponent } from "./Icebreak_Components_EnvoiFirebase/uploadtask.component";
 import { DropzoneDirective } from "./directives/dropzone.directive";
 
-import { IcebreakinsidepartyComponent } from "./icebreakinsideparty/icebreakinsideparty.component";
-import { CarouselModule } from "primeng/carousel";
-import { ButtonModule } from "primeng/button";
-import { ToastModule } from "primeng/toast";
+import { IcebreakinsidepartyComponent } from "./Icebreak_Components_Card/icebreakinsideparty.component";
+
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
@@ -155,7 +153,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     NgbModule,
-    CarouselModule,
   ],
   exports: [
     SignupComponent,

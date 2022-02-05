@@ -5,8 +5,6 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ProductionService } from "../services/production.service";
 import { ViewEncapsulation } from "@angular/core";
-import { AccordionModule } from "primeng/accordion";
-import { MenuItem } from "primeng/api";
 
 @Injectable({
   providedIn: "root",
@@ -21,25 +19,7 @@ export class IcebreakinsidepartyComponent implements OnInit {
 
   responsiveOptions;
 
-  constructor(private ps: ProductionService) {
-    this.responsiveOptions = [
-      {
-        breakpoint: "1024px",
-        numVisible: 3,
-        numScroll: 3,
-      },
-      {
-        breakpoint: "768px",
-        numVisible: 2,
-        numScroll: 2,
-      },
-      {
-        breakpoint: "560px",
-        numVisible: 1,
-        numScroll: 1,
-      },
-    ];
-  }
+  constructor(private ps: ProductionService) {}
 
   ngOnInit(): void {
     this.files = this.ps.getProducts();

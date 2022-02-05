@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 mx-auto my-5" *ngFor="let file of files | async">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h4>Posté par : {{ file.posted }}</h4></mat-card-title
+          >
+          <mat-card-subtitle>
+            {{ file.timestamp | date: "M/d/yy, h:mm a" }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="{{ file.downloadURL }}"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content>
+          <p>
+            <!-- {{ card.description }} -->
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
