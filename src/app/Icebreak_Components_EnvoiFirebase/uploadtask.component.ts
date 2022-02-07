@@ -11,7 +11,7 @@ import { getDatabase } from "firebase/database";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 
 import { ProductionService } from "../services/production.service";
-import { Item } from "../services/item";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 import { usermail } from "../services/userinformation";
 import { email } from "../services/userinformation";
@@ -31,12 +31,13 @@ export class UploadtaskComponent implements OnInit {
 
   email: email[] | string;
   prenom: string;
+  nom: string;
 
   constructor(
     private storage: AngularFireStorage,
     private db: AngularFirestore,
     private afAuth: AngularFireAuth,
-
+    private _snackBar: MatSnackBar,
     private afs: AngularFirestore,
     private ps: ProductionService
   ) {}
@@ -62,12 +63,17 @@ export class UploadtaskComponent implements OnInit {
       console.log("The doc exists!");
       const data = doc.data();
       this.prenom = data.prenom;
+      this.nom = data.nom;
 
       //
       //
     } else {
       console.log("No doc data");
     }
+  }
+
+  openSnackBar(message: string, action: "close") {
+    this._snackBar.open(message, action, { duration: 3500 });
   }
 
   startUpload() {
@@ -96,11 +102,12 @@ export class UploadtaskComponent implements OnInit {
             downloadURL: this.downloadURL,
             originalName: this.file.name,
             timestamp: timestamp,
-            posted: this.prenom,
+            posted: this.prenom + " " + this.nom,
           })
 
           .then(function () {
             console.log("document written!");
+            this.openSnackBar("Fichier Envoyé ! ", "close");
           })
           .catch(function (error) {
             console.error("Error writing document:", error);

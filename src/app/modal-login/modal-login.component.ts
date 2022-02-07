@@ -5,7 +5,7 @@ import { AuthService } from "../services/auth.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { Xliff } from "@angular/compiler";
+declare var $: any;
 
 @Component({
   selector: "app-modal-login",
@@ -16,14 +16,21 @@ import { Xliff } from "@angular/compiler";
   styles: [
     `
       .dark-modal .modal-content {
-        background-color: #292b2c;
-        color: white;
+        width: 100vw;
+        height: 90vh;
+
+        background-image: url(../../app/images/mvh.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 5vh;
       }
+
       .dark-modal .close {
         color: white;
       }
       .light-blue-backdrop {
-        background-color: #292b2c;
+        background-color: #5cb3fd;
       }
     `,
   ],
@@ -64,9 +71,15 @@ export class ModalLoginComponent implements OnInit {
     this._snackBar.open(message, action, { duration: 3500 });
   }
 
-  openBackDropCustomClass(content) {
-    this.modalService.open(content, {
-      backdropClass: "light-blue-backdrop",
+  openBackDropCustomClass(contenty) {
+    this.modalService.open(contenty, {
+      centered: true,
+    });
+  }
+
+  openWindowCustomClass(contenty) {
+    this.modalService.open(contenty, {
+      windowClass: "dark-modal",
       centered: true,
     });
   }

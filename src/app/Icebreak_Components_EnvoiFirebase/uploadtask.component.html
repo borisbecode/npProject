@@ -4,10 +4,10 @@
 </div>
 
 <div *ngIf="snapshot | async as snap">
-  <div>
+  <!--   <div>
     {{ snap.bytesTransferred / 1024 | number: "1.0-1" }} of
     {{ snap.totalBytes / 1024 | number: "1.0-1" }} KB, {{ file.name }}
-  </div>
+  </div> -->
   <button
     mat-raised-button
     (click)="task.pause()"

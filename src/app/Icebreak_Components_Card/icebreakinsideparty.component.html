@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-3 mx-auto my-5" *ngFor="let file of files | async">
       <mat-card class="example-card">
@@ -7,6 +7,7 @@
             <h4>Posté par : {{ file.posted }}</h4></mat-card-title
           >
           <mat-card-subtitle>
+            Le :
             {{ file.timestamp | date: "M/d/yy, h:mm a" }}</mat-card-subtitle
           >
         </mat-card-header>
@@ -17,13 +18,35 @@
         />
         <mat-card-content>
           <p>
-            <!-- {{ card.description }} -->
+            {{ card.description }} 
           </p>
         </mat-card-content>
         <mat-card-actions>
           <button mat-button>LIKE</button>
-        </mat-card-actions>
+        </mat-card-actions> 
       </mat-card>
     </div>
   </div>
+</div> -->
+<div class="container-fluid mx-auto">
+  <owl-carousel-o [options]="customOptions" class="mt-5 ml-5">
+    <ng-template
+      class="mt-5 text-left ml-1"
+      carouselSlide
+      *ngFor="let file of files | async"
+    >
+      <div class="slide">
+        <div class="card" style="width: 25rem">
+          <img src="{{ file.downloadURL }}" class="card-img" alt="..." />
+          <div class="card-body">
+            <p class="card-text">
+              Posté par : {{ file.posted }} <br />
+              Le :
+              {{ file.timestamp | date: "d/M/yy, HH:mm " }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
 </div>

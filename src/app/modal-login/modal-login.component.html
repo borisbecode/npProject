@@ -1,5 +1,5 @@
 <div class="size">
-  <ng-template class="modal-content" #content let-modal>
+  <ng-template class="modal-content" #contenty let-modal>
     <div
       id="modal-header"
       class="modal-header text-center justify-content-center"
@@ -13,7 +13,8 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body">
+
+    <div id="body" class="modal-body">
       <mat-card class="card">
         <form
           ngNativeValidate
@@ -58,9 +59,7 @@
               />
             </mat-form-field>
           </p>
-          <!--    <div *ngIf="firebaseErrorMessage != ''" class="error-style">
-            <span>{{ firebaseErrorMessage }}</span>
-          </div> -->
+
           <div
             class="modal-footer text-center justify-content-around align-items-center pb-0"
           >
@@ -72,14 +71,6 @@
             >
               Connectez vous
             </button>
-            <!--  <button
-            id="closebutton"
-            type="button"
-            class="btn btn-light"
-            (click)="modal.close('Close click')"
-          >
-            je n'ai pas de nom
-          </button> -->
           </div>
         </form>
       </mat-card>
@@ -87,10 +78,17 @@
   </ng-template>
 </div>
 
+<!-- <button
+  id="connexion"
+  class="btn btn-outline-primary mb-2 mr-2"
+  (click)="openBackDropCustomClass(contenty)"
+>
+  Connectez vous !
+</button> -->
 <button
   id="connexion"
   class="btn btn-outline-primary mb-2 mr-2"
-  (click)="openBackDropCustomClass(content)"
+  (click)="openWindowCustomClass(contenty)"
 >
   Connectez vous !
 </button>

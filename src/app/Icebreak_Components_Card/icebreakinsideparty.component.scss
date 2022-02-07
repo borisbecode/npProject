@@ -1,25 +1,23 @@
-/* .example-card {
-  max-width: 400px;
-  min-width: 400px;
-  height: auto;
+.card-img {
+  height: 45vh;
+  width: auto;
+  object-fit: cover;
 }
 
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
+.card-body {
+  background-color: #f4f1de;
 }
-.product-item {
-  .product-item-content {
-    border: 1px solid var(--surface-d);
-    border-radius: 3px;
-    margin: 0.3rem;
-    text-align: center;
-    padding: 2rem 0;
-  }
+.owl-prev {
+  width: 15px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  margin-left: -20px;
+  display: block !important;
+  border: 0px solid black;
+  background-color: blueviolet;
+}
 
-  .product-image {
-    width: 50%;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  }
+.slide:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
- */

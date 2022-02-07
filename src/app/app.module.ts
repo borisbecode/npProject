@@ -75,7 +75,11 @@ import { IcebreakinsidepartyComponent } from "./Icebreak_Components_Card/icebrea
 
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { CountdownModule } from "ngx-countdown";
+import { CarouselModule } from "ngx-owl-carousel-o";
+import { ModalchallengeComponent } from "./Icebreak_Components_Button/modalchallenge/modalchallenge.component";
+import { NgbModalConfig, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { LeChoixDesButtonsComponent } from "./Icebreak_Components_Button/le-choix-des-buttons/le-choix-des-buttons.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +102,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     DropzoneDirective,
 
     IcebreakinsidepartyComponent,
+    ModalchallengeComponent,
+    LeChoixDesButtonsComponent,
   ],
   imports: [
     NgxPageScrollCoreModule.forRoot({
@@ -153,6 +159,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     NgbModule,
+    CarouselModule,
+    CountdownModule,
   ],
   exports: [
     SignupComponent,

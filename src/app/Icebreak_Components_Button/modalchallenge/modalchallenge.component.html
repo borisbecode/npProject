@@ -1,0 +1,55 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Le Challenge de Boris</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Timer :
+    <countdown
+      #cd
+      [config]="{ leftTime: 10, format: 'm:ss S', demand: false }"
+      (event)="timesUp($event); handleEvent($event)"
+    ></countdown
+    ><br />
+
+    Le défi:
+  </div>
+
+  <div class="modal-footer justify-content-around">
+    <div *ngIf="sendpicture">
+      <app-uploadmanager (click)="cd.pause()"></app-uploadmanager>
+    </div>
+
+    <button
+      *ngIf="loose"
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click'); reset()"
+    >
+      J'ai perdu !
+    </button>
+
+    <button
+      *ngIf="sendpicture"
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click'); reset()"
+    >
+      J'y arrive pas !
+    </button>
+  </div>
+</ng-template>
+<button
+  id="connexion"
+  class="btn btn-outline-primary mb-2 mr-2"
+  (click)="openWindowCustomClass(content)"
+>
+  Challenge moi
+</button>

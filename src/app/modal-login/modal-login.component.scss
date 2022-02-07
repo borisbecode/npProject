@@ -35,32 +35,13 @@
   color: #2f7f57;
 }
 
-.modal-content {
-  width: 100vw;
-  height: 90vh;
-
-  background-image: url(../../app/images/mvh.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.modal-body {
-  margin-top: 8vh;
-  margin-left: 9vw;
-  margin-right: 9vw;
+#modal-connexion {
+  background-color: blue;
 }
 
 .card {
   background-color: #d9c9c9;
 }
-
-/* .modal-body {
-  background-image: url(../../app/images/paper.jpg);
-}
-#modal-header {
-  background-image: url(../../app/images/paper.jpg);
-} */
 
 @media (max-aspect-ratio: 18/9) and (min-width: 700px) {
   .modal-body {
@@ -70,10 +51,43 @@
   }
 }
 
-@media (max-width: 382px) {
+@media (max-aspect-ratio: 18/9) and (max-width: 700px) {
+  .modal-body {
+    margin-top: 15vh;
+    margin-left: 9vw;
+    margin-right: 9vw;
+  }
+}
+
+@media (max-width: 415px) {
+  .modal-body {
+    margin-top: 9 vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}
+
+@media (max-width: 391px) {
   .modal-body {
     margin-top: 2vh;
     margin-left: 5vw;
     margin-right: 5vw;
   }
 }
+/* @media (max-width: 413px) and (min-width: 411px) {
+  .modal-body {
+    margin-top: 15 vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}
+
+@media (max-width: 825px) and (min-width: 865px) {
+  .modal-body {
+    margin-top: 0 vh;
+    padding-bottom: 50vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}
+ */
