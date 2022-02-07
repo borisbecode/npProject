@@ -19,7 +19,7 @@
     ></countdown
     ><br />
 
-    Le défi:
+    Le défi: {{ randomstring }}
   </div>
 
   <div class="modal-footer justify-content-around">
@@ -49,7 +49,7 @@
 <button
   id="connexion"
   class="btn btn-outline-primary mb-2 mr-2"
-  (click)="openWindowCustomClass(content)"
+  (click)="openWindowCustomClass(content); random()"
 >
   Challenge moi
 </button>

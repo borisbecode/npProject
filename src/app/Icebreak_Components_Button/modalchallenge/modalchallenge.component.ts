@@ -6,6 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { question } from "src/app/services/question";
 
 import { CountdownModule } from "ngx-countdown";
 @Component({
@@ -36,6 +37,7 @@ export class ModalchallengeComponent implements OnInit {
   closeResult: string;
   sendpicture: boolean = true;
   loose: boolean = false;
+  randomstring: string;
 
   constructor(private modalService: NgbModal) {}
 
@@ -57,6 +59,12 @@ export class ModalchallengeComponent implements OnInit {
       this.sendpicture = !this.sendpicture;
       this.loose = !this.loose;
     }
+  }
+
+  random() {
+    var colors = ["red", "blue", "green", "yellow"];
+    var randColor = question[Math.floor(Math.random() * question.length)];
+    this.randomstring = randColor;
   }
 
   reset() {
