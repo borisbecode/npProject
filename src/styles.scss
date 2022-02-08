@@ -27,7 +27,7 @@ a {
 
   display: block;
   position: relative;
-  padding: 1em 3em;
+  padding: 0.8em 1em;
   appearance: none;
   border: 0;
   background: transparent;
@@ -94,21 +94,22 @@ a {
 
   &:hover &__vertical {
     transform: scaleY(0);
+    /*  background-color: rgba(255, 255, 255, 0.157); */
   }
 }
-.button {
+.buttonloose {
   --offset: 10px;
   --border-size: 2px;
 
   display: block;
   position: relative;
-  padding: 1em 3em;
+  padding: 0.8em 1em;
   appearance: none;
   border: 0;
   background: transparent;
-  color: #e55743;
+  color: #e41f05;
 
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   outline: none;
   cursor: pointer;
   font-weight: bold;
@@ -117,7 +118,7 @@ a {
   transition: background 0.8s ease;
 
   &:hover {
-    background: #f4f1de50;
+    background: #ff000067;
   }
 
   &__horizontal,
@@ -169,5 +170,33 @@ a {
 
   &:hover &__vertical {
     transform: scaleY(0);
+    /*  background-color: rgba(255, 255, 255, 0.157); */
   }
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+.btn-file {
+  /*  position: relative; */
+}
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  cursor: inherit;
+  display: block;
+}
+
+#smaller {
+  width: 10px;
 }

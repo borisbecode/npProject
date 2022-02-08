@@ -24,37 +24,43 @@
 
     <div class="time ml-3 mt-5">
       Temps restant :
-      <countdown
-        #cd
-        [config]="{ leftTime: 60, format: 'm:ss S', demand: false }"
-        (event)="timesUp($event); handleEvent($event)"
-      ></countdown>
+      <div class="mt-3">
+        <countdown
+          #cd
+          [config]="{ leftTime: 60, format: 'm:ss S', demand: false }"
+          (event)="timesUp($event); handleEvent($event)"
+        ></countdown>
+      </div>
     </div>
   </div>
 
   <div class="modal-footer justify-content-around">
     <div id="good" *ngIf="sendpicture">
-      <app-uploadmanager (click)="cd.pause()"></app-uploadmanager>
+      <app-uploadmanager id="smaller" (click)="cd.pause()"></app-uploadmanager>
     </div>
 
     <button
       id="loose"
       *ngIf="loose"
       type="button"
-      class="btn btn-light"
+      class="btn buttonloose"
       (click)="modal.close('Close click'); reset()"
     >
       J'ai perdu !
+      <div class="buttonloose__horizontal"></div>
+      <div class="buttonloose__vertical"></div>
     </button>
 
     <button
       id="loose"
       *ngIf="sendpicture"
       type="button"
-      class="btn btn-light"
+      class="btn buttonloose"
       (click)="modal.close('Close click'); reset()"
     >
       J'y arrive pas !
+      <div class="buttonloose__horizontal"></div>
+      <div class="buttonloose__vertical"></div>
     </button>
   </div>
 </ng-template>

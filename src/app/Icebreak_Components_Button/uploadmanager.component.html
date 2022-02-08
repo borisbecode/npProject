@@ -21,14 +21,14 @@
   </div>
 </div> -->
 <div class="center">
-  <span id="hidden" class="btn button btn-file">
+  <span class="btn button btn-file">
     Envoyer une photo
     <div class="button__horizontal"></div>
     <div class="button__vertical"></div>
     <input type="file" id="formFile" (change)="onDrop($event.target.files)" />
   </span>
+</div>
 
-  <div *ngFor="let file of files">
-    <app-uploadtask [file]="file"></app-uploadtask>
-  </div>
+<div *ngFor="let file of files">
+  <app-uploadtask [file]="file"></app-uploadtask>
 </div>

@@ -43,12 +43,20 @@
       <div class="mt-5 col-12 order-sm-3">
         <h2 class="mb-5">Connectez vous</h2>
 
-        <p class="mt-5">
+        <p class="mt-5" *ngIf="!(afAuth.user | async)">
           Pour voir le contenu lié à votre invitation , nous vous invitons à
           vous connectez.
         </p>
-        <p class="mb-5">pas de panique , tout y sera expliqué</p>
-        <app-modal-login class="mb-5"></app-modal-login>
+        <p class="mt-5" *ngIf="afAuth.user | async">
+          Bravo {{ (user | async)?.prenom }} , vous etes connectés
+        </p>
+        <p class="mb-5" *ngIf="!(afAuth.user | async)">
+          pas de panique , tout y sera expliqué
+        </p>
+        <app-modal-login
+          class="mb-5"
+          *ngIf="!(afAuth.user | async)"
+        ></app-modal-login>
       </div>
     </div>
     <div class="col-sm-4 order-sm-2 FullScreenleft"></div>

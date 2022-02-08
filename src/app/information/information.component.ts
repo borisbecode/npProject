@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { AngularFirestore } from "@angular/fire/compat/firestore";
 
 import * as $ from "jquery";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-information",
@@ -8,9 +11,27 @@ import * as $ from "jquery";
   styleUrls: ["./information.component.scss", "../home/home.component.scss"],
 })
 export class InformationComponent implements OnInit {
-  constructor() {}
+  user: Observable<any>;
+  constructor(
+    public afAuth: AngularFireAuth,
+    private firestore: AngularFirestore
+  ) {
+    this.user = null;
+  }
 
   ngOnInit(): void {
+    this.afAuth.authState.subscribe((user) => {
+      console.log("Dashboard: user", user);
+
+      if (user) {
+        let emailLower = user.email.toLowerCase();
+        this.user = this.firestore
+          .collection("users")
+          .doc(emailLower)
+          .valueChanges();
+      }
+    });
+
     var timer;
 
     var compareDate = new Date();

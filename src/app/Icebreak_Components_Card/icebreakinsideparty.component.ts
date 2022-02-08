@@ -25,7 +25,7 @@ export class IcebreakinsidepartyComponent implements OnInit {
     autoplayTimeout: 5000,
     autoplayHoverPause: true,
     dots: false,
-    navSpeed: 800,
+    navSpeed: 1000,
     navText: [
       "<button  type='button' class='btn  nav-button owl-prev'>previous</button>",
       "<button type='button' class='btn  nav-button owl-next'>next</button>",
@@ -49,7 +49,7 @@ export class IcebreakinsidepartyComponent implements OnInit {
         items: 4,
       },
     },
-    nav: true,
+    nav: false,
   };
   constructor(private ps: ProductionService) {}
 

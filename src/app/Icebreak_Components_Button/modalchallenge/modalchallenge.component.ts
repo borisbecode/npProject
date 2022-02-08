@@ -23,10 +23,9 @@ import { CountdownModule } from "ngx-countdown";
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover; */
-
+        background-color: #f2e2ce;
         color: #3d405b;
-        /*   max-width: 32vw;
-        max-height: 50vh; */
+        min-width: 32vw;
       }
       .dark-modal .close {
         color: white;
