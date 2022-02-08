@@ -18,10 +18,15 @@ import { CountdownModule } from "ngx-countdown";
   styles: [
     `
       .dark-modaly .modal-content {
-        background-color: #f4f1de;
+        /*    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)),
+          url(../../../app/images/cardback.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; */
+
         color: #3d405b;
-        width: auto;
-        height: 50vh;
+        /*   max-width: 32vw;
+        max-height: 50vh; */
       }
       .dark-modal .close {
         color: white;
@@ -37,7 +42,7 @@ export class ModalchallengeComponent implements OnInit {
   closeResult: string;
   sendpicture: boolean = true;
   loose: boolean = false;
-  randomstring: string;
+  randomquestion: string;
 
   constructor(private modalService: NgbModal) {}
 
@@ -62,9 +67,8 @@ export class ModalchallengeComponent implements OnInit {
   }
 
   random() {
-    var colors = ["red", "blue", "green", "yellow"];
-    var randColor = question[Math.floor(Math.random() * question.length)];
-    this.randomstring = randColor;
+    var randQuest = question[Math.floor(Math.random() * question.length)];
+    this.randomquestion = randQuest;
   }
 
   reset() {

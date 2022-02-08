@@ -1,4 +1,4 @@
-<ng-template #content let-modal>
+<ng-template id="modality" #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title">Le Challenge de Boris</h4>
     <button
@@ -10,24 +10,35 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
-    Timer :
-    <countdown
-      #cd
-      [config]="{ leftTime: 10, format: 'm:ss S', demand: false }"
-      (event)="timesUp($event); handleEvent($event)"
-    ></countdown
-    ><br />
+  <div id="boddy" class="modal-body">
+    <div
+      class="titre justify-content-center align-item-center text-center mt-2 mb-5"
+    >
+      Réalise le challenge dans le temps imparti
+    </div>
 
-    Le défi: {{ randomstring }}
+    <div class="defi ml-3 mt-5">
+      Le défi:
+      <div class="randomquestion mt-3">{{ randomquestion }}</div>
+    </div>
+
+    <div class="time ml-3 mt-5">
+      Temps restant :
+      <countdown
+        #cd
+        [config]="{ leftTime: 60, format: 'm:ss S', demand: false }"
+        (event)="timesUp($event); handleEvent($event)"
+      ></countdown>
+    </div>
   </div>
 
   <div class="modal-footer justify-content-around">
-    <div *ngIf="sendpicture">
+    <div id="good" *ngIf="sendpicture">
       <app-uploadmanager (click)="cd.pause()"></app-uploadmanager>
     </div>
 
     <button
+      id="loose"
       *ngIf="loose"
       type="button"
       class="btn btn-light"
@@ -37,6 +48,7 @@
     </button>
 
     <button
+      id="loose"
       *ngIf="sendpicture"
       type="button"
       class="btn btn-light"
@@ -46,10 +58,14 @@
     </button>
   </div>
 </ng-template>
-<button
-  id="connexion"
-  class="btn btn-outline-primary mb-2 mr-2"
-  (click)="openWindowCustomClass(content); random()"
->
-  Challenge moi
-</button>
+<div class="center">
+  <button
+    id="connexion"
+    class="btn button"
+    (click)="openWindowCustomClass(content); random()"
+  >
+    Challenge moi
+    <div class="button__horizontal"></div>
+    <div class="button__vertical"></div>
+  </button>
+</div>

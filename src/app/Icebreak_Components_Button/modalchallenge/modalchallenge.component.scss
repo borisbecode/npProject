@@ -1,7 +1,15 @@
-#connexion {
+/* #connexion {
   background-color: #2f7f57;
   color: white;
   border: white;
+  font-family: "Major Mono Display", monospace;
+} */
+
+#loose {
+  background-color: #e25729;
+  color: white;
+  border: white;
+  font-family: "Major Mono Display", monospace;
 }
 
 .btn-file {
@@ -22,3 +30,37 @@
   cursor: inherit;
   display: block;
 }
+
+.modal-title {
+  font-family: "Major Mono Display", monospace;
+}
+
+.titre {
+  color: #3d405b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Major Mono Display", monospace;
+}
+
+.defi {
+  color: #3d405b;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Major Mono Display", monospace;
+}
+
+.time {
+  color: #3d405b;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Major Mono Display", monospace;
+}
+
+.randomquestion {
+  color: #3d405b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Major Mono Display", monospace;
+}
+
+/*  */

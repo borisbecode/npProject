@@ -3,16 +3,6 @@
   margin: 0;
 }
 
-#connexion {
-  background-color: #2f7f57;
-  color: white;
-  border: white;
-}
-
-#connexion:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
 .inline {
   margin-top: 5%;
   font-size: 1.5vh;
@@ -44,7 +34,7 @@
 }
 
 @media (max-aspect-ratio: 18/9) and (min-width: 700px) {
-  .modal-body {
+  #body {
     margin-top: 12vh;
     margin-left: 9vw;
     margin-right: 9vw;
@@ -52,7 +42,7 @@
 }
 
 @media (max-aspect-ratio: 18/9) and (max-width: 700px) {
-  .modal-body {
+  #body {
     margin-top: 15vh;
     margin-left: 9vw;
     margin-right: 9vw;
@@ -60,7 +50,7 @@
 }
 
 @media (max-width: 415px) {
-  .modal-body {
+  #body {
     margin-top: 9 vh;
     margin-left: 5vw;
     margin-right: 5vw;
@@ -68,7 +58,7 @@
 }
 
 @media (max-width: 391px) {
-  .modal-body {
+  #body {
     margin-top: 2vh;
     margin-left: 5vw;
     margin-right: 5vw;

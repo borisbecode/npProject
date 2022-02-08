@@ -72,7 +72,7 @@ import { UploadtaskComponent } from "./Icebreak_Components_EnvoiFirebase/uploadt
 import { DropzoneDirective } from "./directives/dropzone.directive";
 
 import { IcebreakinsidepartyComponent } from "./Icebreak_Components_Card/icebreakinsideparty.component";
-
+import { question } from "./services/question";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CountdownModule } from "ngx-countdown";
