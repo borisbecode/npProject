@@ -29,20 +29,25 @@
   </div>
 </div> -->
 <div class="container-fluid mx-auto mb-1">
-  <owl-carousel-o [options]="customOptions" class="mt-5 ml-5">
+  <owl-carousel-o [options]="customOptions" class="mt-5">
     <ng-template
-      class="mt-5 text-left ml-1"
+      class="mt-5 text-left"
       carouselSlide
       *ngFor="let file of files | async"
     >
       <div class="slide">
-        <div class="card" style="width: 25rem">
-          <img src="{{ file.downloadURL }}" class="card-img" alt="..." />
+        <div class="card" style="width: 26rem">
+          <img
+            src="{{ file.downloadURL }}"
+            class="card-img"
+            alt="ceci n'est pas une photo"
+          />
           <div class="card-body">
             <p class="card-text">
               Posté par : {{ file.posted }} <br />
               Le :
-              {{ file.timestamp | date: "d/M/yy, HH:mm " }}
+              {{ file.timestamp | date: "d/M/yy, HH:mm " }} <br />
+              <!--   Le challenge : {{ this.laquestion }} -->
             </p>
           </div>
         </div>

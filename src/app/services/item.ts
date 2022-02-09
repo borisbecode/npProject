@@ -3,3 +3,7 @@ export interface Item {
   nom?: string;
   prenom?: string;
 }
+
+export interface LaQuestion {
+  question?: string;
+}

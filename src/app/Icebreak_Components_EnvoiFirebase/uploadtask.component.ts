@@ -15,6 +15,8 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 
 import { usermail } from "../services/userinformation";
 import { email } from "../services/userinformation";
+import { ModalchallengeComponent } from "../Icebreak_Components_Button/modalchallenge/modalchallenge.component";
+import { LaQuestion } from "../services/item";
 
 @Component({
   selector: "app-uploadtask",
@@ -32,6 +34,7 @@ export class UploadtaskComponent implements OnInit {
   email: email[] | string;
   prenom: string;
   nom: string;
+  laquestion: LaQuestion[] | string;
 
   constructor(
     private storage: AngularFireStorage,

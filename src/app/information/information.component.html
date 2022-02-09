@@ -6,7 +6,7 @@
       <h1>information</h1>
       <!-- coupe le coté gauche en deux -->
       <div class="row text-center justify-content-center">
-        <div class="leftdate col-sm-5 order-sm-1 text-center">
+        <div class="col-lg-5 leftdate col-sm-5 order-sm-1 text-center">
           <div class="mb-5">
             <h2 class="mb-4 mt-3">date :</h2>
             <h1>13. 08. 2022</h1>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div
-          class="rightposition col-sm-5 order-sm-1 text-center justify-content-center"
+          class="rightposition col-lg-5 col-sm-5 order-sm-1 text-center justify-content-center"
         >
           <div class="">
             <h2 class="mb-5 mt-3">lieu :</h2>
@@ -41,7 +41,11 @@
         </div>
       </div>
       <div class="mt-5 col-12 order-sm-3">
-        <h2 class="mb-5">Connectez vous</h2>
+        <!--    <h2 class="mb-5">Connectez vous</h2> -->
+        <app-modal-login
+          class="mb-5"
+          *ngIf="!(afAuth.user | async)"
+        ></app-modal-login>
 
         <p class="mt-5" *ngIf="!(afAuth.user | async)">
           Pour voir le contenu lié à votre invitation , nous vous invitons à
@@ -53,10 +57,6 @@
         <p class="mb-5" *ngIf="!(afAuth.user | async)">
           pas de panique , tout y sera expliqué
         </p>
-        <app-modal-login
-          class="mb-5"
-          *ngIf="!(afAuth.user | async)"
-        ></app-modal-login>
       </div>
     </div>
     <div class="col-sm-4 order-sm-2 FullScreenleft"></div>

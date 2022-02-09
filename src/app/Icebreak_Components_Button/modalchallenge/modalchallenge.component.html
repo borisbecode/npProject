@@ -34,7 +34,7 @@
     </div>
   </div>
 
-  <div class="modal-footer justify-content-around">
+  <div class="modal-footer justify-content-around mb-3">
     <div id="good" *ngIf="sendpicture">
       <app-uploadmanager id="smaller" (click)="cd.pause()"></app-uploadmanager>
     </div>
@@ -55,7 +55,7 @@
       id="loose"
       *ngIf="sendpicture"
       type="button"
-      class="btn buttonloose"
+      class="btn buttonloose mt-4"
       (click)="modal.close('Close click'); reset()"
     >
       J'y arrive pas !

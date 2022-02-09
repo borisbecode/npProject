@@ -9,6 +9,7 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { question } from "src/app/services/question";
 
 import { CountdownModule } from "ngx-countdown";
+import { LaQuestion } from "src/app/services/item";
 @Component({
   selector: "app-modalchallenge",
   templateUrl: "./modalchallenge.component.html",
@@ -42,6 +43,7 @@ export class ModalchallengeComponent implements OnInit {
   sendpicture: boolean = true;
   loose: boolean = false;
   randomquestion: string;
+  laquestion: LaQuestion[] | string;
 
   constructor(private modalService: NgbModal) {}
 
@@ -68,6 +70,7 @@ export class ModalchallengeComponent implements OnInit {
   random() {
     var randQuest = question[Math.floor(Math.random() * question.length)];
     this.randomquestion = randQuest;
+    this.laquestion = randQuest;
   }
 
   reset() {

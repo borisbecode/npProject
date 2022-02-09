@@ -23,7 +23,34 @@ declare var $: any;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        margin-top: 5vh;
+      }
+      @media (min-width: 2559px) {
+        .dark-modal .modal-content {
+          padding-bottom: 15%;
+
+          height: 80%;
+          margin-bottom: 10vh;
+
+          background-image: url(../../app/images/mvh.jpg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+      @media (max-width: 822px) and (min-width: 819px) {
+        .dark-modal .modal-content {
+          padding-bottom: 40%;
+
+          height: 90vh;
+          width: 100vw;
+          margin-left: 0px;
+          margin-right: 0px;
+
+          background-image: url(../../app/images/mvh.jpg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
       }
 
       .dark-modal .close {
