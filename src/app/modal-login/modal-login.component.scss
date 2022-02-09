@@ -33,6 +33,72 @@
   background-color: #d9c9c9;
 }
 
+#body {
+  position: absolute;
+  margin-top: 10%;
+  padding-top: 17%;
+}
+
+@media (max-width: 2580px) {
+  #body {
+    margin-top: 17%;
+
+    padding-top: 25%;
+  }
+}
+
+@media (max-width: 1367px) and (min-width: 1364px) and (max-height: 769px) and (min-height: 760px) {
+  #body {
+    margin-top: 10%;
+    padding-top: 0px;
+  }
+}
+
+@media (max-height: 1081px) and (min-height: 770px) {
+  #body {
+    margin-top: 27%;
+    padding-top: 17%;
+  }
+}
+
+//ipad air
+@media (max-width: 821px) and (min-width: 819px) {
+  #body {
+    height: 100vh;
+    padding-top: 45%;
+  }
+}
+//ipad mini
+@media (max-width: 769px) and (min-width: 760px) {
+  #body {
+    padding-top: 33%;
+  }
+}
+
+@media (max-width: 425px) and(min-height:1000px) {
+  #body {
+    padding-top: 35%;
+  }
+}
+@media (max-width: 376px) and(min-height:1000px) {
+  #body {
+    padding-top: 33%;
+  }
+}
+
+@media (max-width: 376px) and (max-height: 999px) {
+  #body {
+    padding-top: 5%;
+  }
+}
+
+@media (max-height: 800px) {
+  #body {
+    padding-top: 5%;
+  }
+}
+
+/* 
 @media (max-width: 2559px) {
   #body {
     margin-top: 17%;
@@ -140,3 +206,4 @@
     margin-right: 5vw;
   }
 }
+ */

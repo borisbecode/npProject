@@ -63,4 +63,8 @@
   font-family: "Major Mono Display", monospace;
 }
 
-/*  */
+@media all and (max-width: 767px) {
+  #loose {
+    margin-top: 35px;
+  }
+}

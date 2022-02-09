@@ -16,6 +16,7 @@ declare var $: any;
   styles: [
     `
       .dark-modal .modal-content {
+        position: relative;
         width: 100vw;
         height: 90vh;
 
@@ -24,7 +25,21 @@ declare var $: any;
         background-repeat: no-repeat;
         background-size: cover;
       }
-      @media (min-width: 2559px) {
+
+      @media (min-height: 1200px) {
+        .dark-modal .modal-content {
+          padding-bottom: 15%;
+
+          height: 60vh;
+          margin-bottom: 10vh;
+
+          background-image: url(../../app/images/mvh.jpg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+      /*  @media (min-width: 2559px) {
         .dark-modal .modal-content {
           padding-bottom: 15%;
 
@@ -51,7 +66,7 @@ declare var $: any;
           background-repeat: no-repeat;
           background-size: cover;
         }
-      }
+      } */
 
       .dark-modal .close {
         color: white;
