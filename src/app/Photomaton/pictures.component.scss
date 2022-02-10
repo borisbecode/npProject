@@ -9,4 +9,14 @@
 
 #photoma {
   height: 100vh;
+  width: 100vw;
+}
+
+@media (max-width: 800px) {
+  #pictures {
+    height: auto;
+  }
+  #photoma {
+    height: 300px;
+  }
 }

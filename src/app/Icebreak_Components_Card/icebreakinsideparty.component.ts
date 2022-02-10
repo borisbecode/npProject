@@ -39,6 +39,9 @@ export class IcebreakinsidepartyComponent implements OnInit {
       400: {
         items: 1,
       },
+      500: {
+        items: 1,
+      },
       760: {
         items: 1,
       },

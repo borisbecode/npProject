@@ -54,38 +54,38 @@
   "
     class="carousel slide carousel-fade"
     [animation]="'fade'"
+    [noPause]="true"
   >
-    <mdb-carousel-item>
-      <img
-        id="photoma"
-        class="w-100"
-        src="https://zupimages.net/up/22/06/syzy.jpg"
-        alt="First slide"
-      />
+    <mdb-carousel-item *ngFor="let img of images">
+      <img id="photoma" class="" [src]="img" alt="First slide" />
+      <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
     </mdb-carousel-item>
-    <mdb-carousel-item>
+    <!--  <mdb-carousel-item>
       <img
         id="photoma"
-        class="w-100"
+        class=""
         src="https://zupimages.net/up/22/06/px2q.jpg"
         alt="Second slide"
       />
+      <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
     </mdb-carousel-item>
     <mdb-carousel-item>
       <img
         id="photoma"
-        class="w-100 h-100"
+        class=""
         src="https://zupimages.net/up/22/06/1q48.jpg"
         alt="Third slide"
       />
+      <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
     </mdb-carousel-item>
     <mdb-carousel-item>
       <img
         id="photoma"
-        class="w-100"
+        class=""
         src="https://zupimages.net/up/22/06/rb92.jpg"
         alt="Third4 slide"
       />
-    </mdb-carousel-item>
+      <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+    </mdb-carousel-item> -->
   </mdb-carousel>
 </div>
