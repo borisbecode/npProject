@@ -6,6 +6,7 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { text } from "@fortawesome/fontawesome-svg-core";
 import { ElementRef, ViewChild } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 @Component({
   selector: "app-signup",
@@ -75,12 +76,25 @@ export class SignupComponent implements OnInit {
 
       .then((result) => {
         if (result == null) {
-          this.openSnackBar(
-            "invité enregistré,rafraichissement de la page...",
-            "close"
-          );
-          this.signupForm.reset();
+          this.afAuth.signOut();
+
+          this.authService
+            .loginUser("adminboris@gmail.com", "adminAdmin_Boris")
+            .then((result) => {
+              this.isProgressVisible = false; // no matter what, when the auth service returns, we hide the progress indicator
+              if (result == null) {
+                // null is success, false means there was an error
+                this.openSnackBar("invité enregistré", "close");
+
+                this.router.navigate(["/admin"]); // when the user is logged in, navigate them to dashboard
+              } else if (result.isValid == false) {
+                this.openSnackBar("erreur admin", "close");
+                console.log("login error", result);
+                this.firebaseErrorMessage = result.message;
+              }
+            });
         }
+
         if (result.isValid == false)
           // null is success, false means there was an error
 
@@ -91,25 +105,6 @@ export class SignupComponent implements OnInit {
 
       .catch(() => {
         this.isProgressVisible = false;
-      });
-  }
-
-  logout(): void {
-    this.afAuth.signOut();
-  }
-
-  loginUserAdmin(email: string, password: string): Promise<any> {
-    return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        console.log("Auth Service: loginUser: success");
-        this.router.navigate(["/admin"]);
-      })
-      .catch((error) => {
-        console.log("Auth Service: login error...");
-        console.log("error code", error.code);
-        console.log("error", error);
-        if (error.code) return { isValid: false, message: error.message };
       });
   }
 }

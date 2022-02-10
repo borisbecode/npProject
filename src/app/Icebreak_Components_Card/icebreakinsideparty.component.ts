@@ -27,7 +27,7 @@ export class IcebreakinsidepartyComponent implements OnInit {
     dots: false,
     navSpeed: 1000,
     navText: [
-      "<button  type='button' class='btn  nav-button owl-prev'>previous</button>",
+      "<button  type='button' style='color:blue !important'  class='btn  nav-button owl-prev'>previous</button>",
       "<button type='button' class='btn  nav-button owl-next'>next</button>",
       /*   "<div id='left' class='nav-button owl-prev'>‹</div>",
       "<div id='right' class='nav-button owl-next'>›</div>", */

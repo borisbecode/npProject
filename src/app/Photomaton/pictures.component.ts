@@ -16,7 +16,7 @@ export class PicturesComponent implements OnInit {
   ngOnInit(): void {}
   images = [
     "https://zupimages.net/up/22/05/j3x8.jpg",
-    "http://drive.google.com/uc?export=view&id=14zg8frqZCJ5S9zgcuS0lLnik0E-Y1Rak",
+    "https://zupimages.net/up/22/06/syzy.jpg",
   ];
 
   paused = false;

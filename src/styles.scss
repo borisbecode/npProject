@@ -31,7 +31,7 @@ a {
   appearance: none;
   border: 0;
   background: transparent;
-  color: #e55743;
+  color: #e24b37;
 
   letter-spacing: 0.25em;
   outline: none;
@@ -200,3 +200,6 @@ a {
 #smaller {
   width: 10px;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";

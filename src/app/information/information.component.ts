@@ -4,6 +4,7 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 
 import * as $ from "jquery";
 import { Observable } from "rxjs";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-information",
@@ -14,7 +15,8 @@ export class InformationComponent implements OnInit {
   user: Observable<any>;
   constructor(
     public afAuth: AngularFireAuth,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private router: Router
   ) {
     this.user = null;
   }

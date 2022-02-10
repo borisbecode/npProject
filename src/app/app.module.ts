@@ -72,7 +72,7 @@ import { UploadtaskComponent } from "./Icebreak_Components_EnvoiFirebase/uploadt
 import { DropzoneDirective } from "./directives/dropzone.directive";
 
 import { IcebreakinsidepartyComponent } from "./Icebreak_Components_Card/icebreakinsideparty.component";
-import { question } from "./services/question";
+
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CountdownModule } from "ngx-countdown";
@@ -80,6 +80,12 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 import { ModalchallengeComponent } from "./Icebreak_Components_Button/modalchallenge/modalchallenge.component";
 import { NgbModalConfig, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { LeChoixDesButtonsComponent } from "./Icebreak_Components_Button/le-choix-des-buttons/le-choix-des-buttons.component";
+// For MDB Angular Free
+import { MDBBootstrapModule } from "angular-bootstrap-md";
+import {
+  CarouselModule as boriscarrousel,
+  WavesModule,
+} from "angular-bootstrap-md";
 @NgModule({
   declarations: [
     AppComponent,
@@ -161,6 +167,7 @@ import { LeChoixDesButtonsComponent } from "./Icebreak_Components_Button/le-choi
     NgbModule,
     CarouselModule,
     CountdownModule,
+    MDBBootstrapModule.forRoot(),
   ],
   exports: [
     SignupComponent,

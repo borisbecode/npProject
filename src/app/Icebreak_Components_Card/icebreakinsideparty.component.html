@@ -28,10 +28,11 @@
     </div>
   </div>
 </div> -->
+
 <div class="container-fluid mx-auto mb-1">
   <owl-carousel-o [options]="customOptions" class="mt-5">
     <ng-template
-      class="mt-5 text-left"
+      class="owl-carousel"
       carouselSlide
       *ngFor="let file of files | async"
     >
@@ -54,4 +55,23 @@
       </div>
     </ng-template>
   </owl-carousel-o>
+  <!--  <div class="btns">
+    <div class="customNextBtn">Next slide</div>
+    <div class="customPreviousBtn">Previous slide</div>
+  </div> -->
 </div>
+
+<script>
+  var owl = $(".owl-carousel");
+  owl.owlCarousel();
+  // Go to the next item
+  $(".customNextBtn").click(function () {
+    owl.trigger("next.owl.carousel");
+  });
+  // Go to the previous item
+  $(".customPrevBtn").click(function () {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl.trigger("prev.owl.carousel", [300]);
+  });
+</script>

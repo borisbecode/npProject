@@ -51,9 +51,9 @@
           Pour voir le contenu lié à votre invitation , nous vous invitons à
           vous connectez.
         </p>
-        <p class="mt-5" *ngIf="afAuth.user | async">
-          Bravo {{ (user | async)?.prenom }} , vous etes connectés
-        </p>
+        <h2 class="mt-5" *ngIf="afAuth.user | async">
+          Bienvenue {{ (user | async)?.prenom }}
+        </h2>
         <p class="mb-5" *ngIf="!(afAuth.user | async)">
           pas de panique , tout y sera expliqué
         </p>

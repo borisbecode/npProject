@@ -27,7 +27,7 @@
       <div class="mt-3">
         <countdown
           #cd
-          [config]="{ leftTime: 60, format: 'm:ss S', demand: false }"
+          [config]="{ leftTime: 10, format: 'm:ss S', demand: false }"
           (event)="timesUp($event); handleEvent($event)"
         ></countdown>
       </div>
@@ -43,7 +43,7 @@
       id="loose"
       *ngIf="loose"
       type="button"
-      class="btn buttonloose"
+      class="buttonloose"
       (click)="modal.close('Close click'); reset()"
     >
       J'ai perdu !
@@ -55,7 +55,7 @@
       id="loose"
       *ngIf="sendpicture"
       type="button"
-      class="btn buttonloose"
+      class="buttonloose"
       (click)="modal.close('Close click'); reset()"
     >
       J'y arrive pas !
@@ -67,7 +67,7 @@
 <div class="center">
   <button
     id="connexion"
-    class="btn button"
+    class="button"
     (click)="openWindowCustomClass(content); random()"
   >
     Challenge moi

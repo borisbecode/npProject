@@ -1,15 +1,19 @@
 <div class="background">
-  <div class="container">
+  <div class="container-fluid">
+    <button class="btn btn-primary btn-sm mr-5" routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <p>Return Home</p>
+    </button>
+    <div class="d-flex flex-row align-middle justify-content-center">
+      <h1 class="neon">Admin page</h1>
+    </div>
+
     <div class="row justify-content-center">
       <div
         id="end"
         class="col-10"
         *ngIf="(user | async)?.accountType == '1'; else notAdmin"
       >
-        <div class="d-flex flex-row align-middle justify-content-center">
-          <h1 class="neon">Admin page</h1>
-        </div>
-
         <app-signup></app-signup>
       </div>
 

@@ -74,7 +74,6 @@ export class UploadtaskComponent implements OnInit {
       console.log("No doc data");
     }
   }
-
   openSnackBar(message: string, action: "close") {
     this._snackBar.open(message, action, { duration: 3500 });
   }
@@ -110,7 +109,6 @@ export class UploadtaskComponent implements OnInit {
 
           .then(function () {
             console.log("document written!");
-            this.openSnackBar("Fichier Envoyé ! ", "close");
           })
           .catch(function (error) {
             console.error("Error writing document:", error);
